@@ -1,4 +1,36 @@
+body { 
+  text-align: center;
+}
 
 div { 
-  height: 150px;
+  height: 200px;
 }
+
+p { 
+  width: 550px;
+  margin: auto;
+}
+
+#div1 { 
+  background-color: lightblue;
+  font-size: 200%;
+}
+
+#div2 { 
+  background-color: aquamarine;
+  font-size: 300%
+}
+
+#div3 { 
+  background-color: blue;
+  font-size: 400%;
+}
+
+input { 
+  height: 40px;
+}
+
+div:hover { 
+  font-weight: bold;
+}
+

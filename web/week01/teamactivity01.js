@@ -1,3 +1,11 @@
 
+function clickMe() { 
+  alert("Clicked!");
+}
 
-// insert js here
+
+function changeColor(color) { 
+  document.getElementById('div1').style.background = color.value;
+  
+}
+
