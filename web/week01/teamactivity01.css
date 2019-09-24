@@ -7,7 +7,7 @@ div {
 }
 
 p { 
-  width: 550px;
+  width: 600px;
   margin: auto;
 }
 
@@ -28,6 +28,7 @@ p {
 
 input, button { 
   height: 40px;
+  font-size: 60%;
 }
 
 div:hover { 
