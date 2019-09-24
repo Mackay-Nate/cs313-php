@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 01 - CS 313 Team Activity</title>
     <script src="teamactivity01.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(color) {
+        $("#button2").click(function() {
+          $("#div3").fadeToggle("slow");
+        });
+
+        $("#button1").click(function(color) {
+          $("#div1").css("background-color", $("input:text").val());
+          //that took forever
+        });
+      });
+    
+    </script>
     <link rel="stylesheet" type="text/css" href="teamactivity01.css">   
   </head>
 
@@ -14,6 +28,7 @@
       <p>What color would you like here?
         <input type="text" id="color">
         <input type="button" value="Change color" onclick="changeColor(color)"> 
+        <button id="button1">Change color w/ jQuery </button>
       </p>
     </div>
   </div>
@@ -22,6 +37,8 @@
     <p>This color is aquamarine.
       <input type="button" value="Click Me." onclick="clickMe();">
     </p>
+    <button id="button2">Fade in/out blue</button>
+
   </div>
 
   <div id="div3">
