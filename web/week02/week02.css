@@ -7,8 +7,10 @@ body {
   font-size: 150%;
 }
 
-h1 { 
-  text-align: center;
+header {
+  padding: 10px;
+  border-bottom: solid;
+
 }
 
 ul { 
@@ -25,10 +27,11 @@ li {
   padding: 1%;
   border-style: dotted;
   border-width: 3px;
+
 }
 
 #assignments { 
-  min-height: 500px;
+  min-height: 600px;
 }
 
 img { 
