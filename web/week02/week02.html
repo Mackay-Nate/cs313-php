@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -7,8 +8,13 @@
   </head>
 
 <body>
+    <header>
+        <?php
+          echo "<h1>Nate Mackay</h1>";
+        ?>
+      </header>
 
-  <h1>Nate Mackay</h1>
+  <h3>Nate Mackay</h3>
   <p>About me: I am a student at Brigham Young University - Idaho. My major is Software Engineering. </p>
   <a href="../index.php">Here is a list of my assignments for CS 313</a>
   <div id="assignments">
@@ -24,5 +30,15 @@
     
   </div>
   </div>
+
+  <footer>
+    <?php
+      date_default_timezone_set("America/Denver");
+      echo "Today is " . date("l") . ". ";
+      echo "The date is " . date("m-d-Y") . ". ";
+      echo "The time is " . date("h:i:sa") . ". ";
+    ?>
+  </footer>
+  
 </body>
 </html>
