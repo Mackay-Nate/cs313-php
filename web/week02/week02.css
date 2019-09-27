@@ -7,14 +7,13 @@ body {
   font-size: 150%;
 }
 
-header {
+header, footer {
   padding: 30px;
   border-bottom: solid;
-
 }
 
 ul { 
-  list-style-position: inside;
+  list-style-position: unset;
   text-align: center;
 }
 
