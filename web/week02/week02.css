@@ -14,7 +14,7 @@ header, footer {
 
 ul { 
   list-style-position: inside;
-  list-style-image: none;
+  list-style-type: none;
   text-align: center;
 }
 
@@ -27,7 +27,6 @@ li {
   padding: 1%;
   border-style: dotted;
   border-width: 3px;
-
 }
 
 #assignments { 
