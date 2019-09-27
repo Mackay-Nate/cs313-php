@@ -1,7 +1,7 @@
 <?php
   $header = ""; 
   $header += "<header>";
-  $header += "<h1>Nate Mackay</h1>";
+  $header += "<h1>" + "Nate Mackay" + "</h1>";
   $header += "<nav>";
   $header += "<a href='week02/week02.html'>Homepage</a>";
   $header += "<a href='index.html'>CS 313 Assignments</a>";

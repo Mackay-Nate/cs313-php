@@ -2,6 +2,9 @@
 body { 
   background-color: lightskyblue;
   text-align: center;
+  width: 1250px;
+  margin: auto;
+  font-size: 150%;
 }
 
 h1 { 
@@ -13,6 +16,17 @@ ul {
   text-align: center;
 }
 
+li { 
+  padding: 5px;
+}
+
+div { 
+  margin: 2%;
+  padding: 1%;
+  border-style: dotted;
+  border-width: 3px;
+}
+
 img { 
   height: 200px;
   padding: 2%;
@@ -22,3 +36,6 @@ img:hover {
   background-color: lightsteelblue;
 }
 
+li:hover { 
+  font-weight: bold; 
+}
