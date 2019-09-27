@@ -23,7 +23,7 @@
     <?php
       echo "Today is " . date("l") . ". ";
       echo "The date is " . date("m-d-Y") . ". ";
-      echo "The time is " . date(h:i:sa) . ". ";
+      echo "The time is " . date("h:i:sa") . ". ";
     ?>
   </footer>
 
