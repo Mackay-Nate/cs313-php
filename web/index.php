@@ -35,9 +35,11 @@
     
 
 
-
-<?php
-
+  <footer>
+    <?php
+      echo "Today is " . date("l");
+      echo "The date is " . date("m-d-Y");
+  
 ?>
 
 
