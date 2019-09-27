@@ -12,12 +12,14 @@
 <body>
     
   <h1>CS 313 Assignment</h1>
-    <ul>
-      <li><a href="week02/week02.html">Week 02: Homepage</a></li>
-      <li><a href="index.php">Coming soon</a></li>
-      <li><a href="index.php">Coming soon</a></li>
-      <li><a href="index.php">Coming soon</a></li>
-    </ul>
+    <div id="assignments">
+      <ul>
+        <li><a href="week02/week02.html">Week 02: Homepage</a></li>
+        <li><a href="index.php">Coming soon</a></li>
+        <li><a href="index.php">Coming soon</a></li>
+        <li><a href="index.php">Coming soon</a></li>
+      </ul>
+    </div>
     
   <footer>
     <?php
