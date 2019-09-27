@@ -10,7 +10,7 @@
 <body>
   <header>
     <?php
-      echo "Nate Mackay";
+      echo "<h1>Nate Mackay</h1>;";
     ?>
   </header>
 
