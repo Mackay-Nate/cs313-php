@@ -1,3 +1,14 @@
+<?php
+  $header = ""; 
+  $header += "<header>";
+  $header += "<h1>Nate Mackay</h1>";
+  $header += "<nav>";
+  $header += "<a href="week02/week02.html">Homepage</a>";
+  $header += "<a href="index.html">CS 313 Assignments</a>";
+  $header += "</nav>";
+  $header += "</header>";
+?>
+
 <!DOCYTPE html> 
 <html lang="en-us">
   <head>
@@ -7,16 +18,8 @@
   </head>
 
 <body>
-<?php
-    $header = ""; 
-      $header += "<header>";
-      $header += "<h1>Nate Mackay</h1>";
-      $header += "<nav>";
-      $header += "<a href="week02/week02.html">Homepage</a>";
-      $header += "<a href="index.html">CS 313 Assignments</a>";
-      $header += "</nav>";
-      $header += "</header>";
 
+  <?php
       echo $header;
   ?>
     
