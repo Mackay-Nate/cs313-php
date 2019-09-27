@@ -1,0 +1,13 @@
+
+body { 
+  background-color: lightskyblue;
+}
+
+h1 { 
+  text-align: center;
+}
+
+ul { 
+  list-style-position: inside;
+  text-align: center;
+}
