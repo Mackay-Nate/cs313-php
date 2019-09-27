@@ -1,7 +1,6 @@
-<?php 
-?> 
 
-<!DOCYTPE html> 
+
+<!DOCYTPE html>
 <html lang="en-us">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +9,13 @@
   </head>
 
 <body>
-    
-  <h1>CS 313 Assignment</h1>
+  <header>
+    <?php
+      echo "Nate Mackay";
+    ?>
+  </header>
+
+  <h3>CS 313 Assignment</h3>
     <div id="assignments">
       <ul>
         <li><a href="week02/week02.html">Week 02: Homepage</a></li>
@@ -20,9 +24,10 @@
         <li><a href="index.php">Coming soon</a></li>
       </ul>
     </div>
-    
+
   <footer>
     <?php
+      date_default_timezone_set("America/Denver");
       echo "Today is " . date("l") . ". ";
       echo "The date is " . date("m-d-Y") . ". ";
       echo "The time is " . date("h:i:sa") . ". ";
