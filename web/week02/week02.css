@@ -1,6 +1,7 @@
 
 body { 
   background-color: lightskyblue;
+  text-align: center;
 }
 
 h1 { 
@@ -11,3 +12,13 @@ ul {
   list-style-position: inside;
   text-align: center;
 }
+
+img { 
+  height: 200px;
+  padding: 2%;
+}
+
+img:hover { 
+  background-color: lightsteelblue;
+}
+
