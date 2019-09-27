@@ -13,7 +13,8 @@ header, footer {
 }
 
 ul { 
-  list-style-position: unset;
+  list-style-position: inside;
+  list-style-image: none;
   text-align: center;
 }
 

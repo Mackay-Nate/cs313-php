@@ -14,7 +14,7 @@
         ?>
       </header>
 
-  <h3>Nate Mackay</h3>
+  <h3>Homepage</h3>
   <p>About me: I am a student at Brigham Young University - Idaho. My major is Software Engineering. </p>
   <a href="../index.php">Here is a list of my assignments for CS 313</a>
   <div id="assignments">
