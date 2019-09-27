@@ -7,6 +7,8 @@
   $header += "<a href='index.html'>CS 313 Assignments</a>";
   $header += "</nav>";
   $header += "</header>";
+
+  echo $header;
 ?>
 
 <!DOCYTPE html> 
