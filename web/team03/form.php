@@ -13,8 +13,7 @@
   Your continents are:
   <?php 
     foreach ($continents as $visit) {
-      $clean = htmlspecialchars($visit);
-      echo $clean;
+      echo htmlspecialchars($visit);
       echo "<br>";
     }
   ?>

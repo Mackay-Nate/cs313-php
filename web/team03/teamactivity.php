@@ -4,7 +4,7 @@
 <html>
 <body>
 
-  <form action="results.php" method="post">
+  <form action="form.php" method="post">
     Name: <input type="text" name="name"><br>
     E-mail: <input type="text" name="email"><br>
     <input type="radio" name="major" value="Computer Science">Computer Science <br>
