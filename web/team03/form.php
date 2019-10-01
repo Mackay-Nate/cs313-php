@@ -1,5 +1,5 @@
 <?php 
-  $continents = $_POST("continents");
+  $continents = $_POST["continents"];
 ?>
 
 <html>
