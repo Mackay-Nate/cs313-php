@@ -10,6 +10,12 @@
   Your major is: <?php echo $_POST["major"]; ?><br>
   Your comments: <?php echo $_POST["comment"]; ?> <br>
   Your continents are:
+  <?php 
+    if (isset($_POST["continents"])) { 
+      echo $_POST["continents";]
+    }
+  ?>
+
   <?php
     foreach ($continents as $value) { 
       echo "$value <br>";
