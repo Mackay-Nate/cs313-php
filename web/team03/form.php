@@ -12,6 +12,10 @@
   Your comments: <?php echo $_POST["comment"]; ?> <br>
   Your continents are:
   <?php 
+    for ($i = 0; $i < $length; $i++) {
+      echo $continents[1];
+      echo "<br>";
+    }
   ?>
 
 </body>
