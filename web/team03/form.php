@@ -19,7 +19,7 @@
   Your continents are:
   <?php 
     foreach ($continents as $visit) {
-      echo $map[$visit]);
+      echo $map["$visit");
       echo "<br>";
     }
   ?>
