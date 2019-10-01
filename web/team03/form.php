@@ -13,7 +13,7 @@
   Your continents are:
   <?php 
     for ($i = 0; $i < $length; $i++) {
-      echo $continents[$i];
+      echo $continents;
       echo "<br>";
     }
   ?>
