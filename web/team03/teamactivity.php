@@ -8,6 +8,7 @@
     Name: <input type="text" name="name"><br>
     E-mail: <input type="text" name="email"><br>
 
+    <!-- Stretch challenge #1 -->
     <?php 
       $major = array("cs" => "Computer Science", "wdd" => "Web Design and Development", "cit" => "Computer Information Technology", "ce" => "Computer Engineering");
 

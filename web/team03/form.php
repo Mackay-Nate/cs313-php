@@ -1,6 +1,12 @@
 <?php 
   $continents = $_POST["continents"];
   $length = count($continents);
+
+  $map = array("na" => "North America", "sa" => "South America", "eu" => "Europe", "as" => "Asia", "au" => "Australia", "af" => "Africa", "an" => "Antarctica");
+
+  $major = array("cs" => "Computer Science", "wdd" => "Web Design and Development", "cit" => "Computer Information Technology", "ce" => "Computer Engineering");
+
+
 ?>
 
 <html>
@@ -13,7 +19,7 @@
   Your continents are:
   <?php 
     foreach ($continents as $visit) {
-      echo htmlspecialchars($visit);
+      echo $map[$visit]);
       echo "<br>";
     }
   ?>
