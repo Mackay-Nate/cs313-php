@@ -20,6 +20,7 @@
     <input type="checkbox" name="continents" value="Australia">Australia<br>
     <input type="checkbox" name="continents" value="Africa">Africa<br>
     <input type="checkbox" name="continents" value="Antarctica">Antarctica<br>
+
     <input type="submit">
   </form>
 

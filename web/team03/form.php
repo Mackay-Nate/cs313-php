@@ -1,5 +1,6 @@
 <?php 
   $continents = $_POST["continents"];
+  $length = count($continents);
 ?>
 
 <html>
@@ -10,19 +11,8 @@
   Your major is: <?php echo $_POST["major"]; ?><br>
   Your comments: <?php echo $_POST["comment"]; ?> <br>
   Your continents are:
-
-
-  <?php
-    foreach ($continents as $value => $value_value) { 
-      echo "$value <br>";
-    }
+  <?php 
   ?>
 
-<?php 
-    if (isset($_POST["continents"])) { 
-      echo $_POST["continents";]
-    }
-  ?>
-  
 </body>
 </html>
