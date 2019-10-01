@@ -24,13 +24,13 @@
 
     Comment: <textarea name="comment" rows="5" cols="40"></textarea><br>
 
-    <input type="checkbox" name="continents[]" value="North America">North America<br>
-    <input type="checkbox" name="continents[]" value="South America">South America<br>
-    <input type="checkbox" name="continents[]" value="Europe">Europe<br>
-    <input type="checkbox" name="continents[]" value="Asia">Asia<br>
-    <input type="checkbox" name="continents[]" value="Australia">Australia<br>
-    <input type="checkbox" name="continents[]" value="Africa">Africa<br>
-    <input type="checkbox" name="continents[]" value="Antarctica">Antarctica<br>
+    <input type="checkbox" name="continents[]" value="na">North America<br>
+    <input type="checkbox" name="continents[]" value="sa">South America<br>
+    <input type="checkbox" name="continents[]" value="eu">Europe<br>
+    <input type="checkbox" name="continents[]" value="as">Asia<br>
+    <input type="checkbox" name="continents[]" value="au">Australia<br>
+    <input type="checkbox" name="continents[]" value="af">Africa<br>
+    <input type="checkbox" name="continents[]" value="an">Antarctica<br>
 
     <input type="submit">
   </form>
