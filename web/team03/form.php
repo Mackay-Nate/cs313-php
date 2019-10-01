@@ -12,8 +12,8 @@
   Your comments: <?php echo $_POST["comment"]; ?> <br>
   Your continents are:
   <?php 
-    for ($i = 0; $i < $length; $i++) {
-      echo $continents;
+    foreach ($continents as $visit) {
+      echo htmlspecialchars($visit);
       echo "<br>";
     }
   ?>
