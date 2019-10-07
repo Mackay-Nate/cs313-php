@@ -1,0 +1,116 @@
+
+body {
+  font-family: Tahoma;
+  background-image: url("floor1.jpg");
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/*header section*/
+#logo {
+  display: block;
+  width: 700px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#navigationbar {
+  background-image: url("floor2.jpg");
+  background-color: rgba(233,233,233,0.5);
+  border: 2px;
+  padding-right: 20%;
+}
+#navigationbar ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: brown;
+}
+#navigationbar ul li {
+  float: right;
+  font-size: 150%;
+  padding: 10px 40px;
+}
+#navigationbar ul li a:hover {
+  background-color: gray;
+  color: green;
+}
+#navigationbar ul li.active {
+  background-color: darkblue;
+}
+#navigationbar ul li a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px;
+}
+
+footer {
+  margin: 5%;
+}
+
+.text {
+  font: bold;
+  width: 60%;
+}
+
+.purchase {
+  margin: 5%;
+}
+
+/* shopping cart section */
+#blockArea, #blockArea2 {
+  text-align: center;
+}
+
+#blockArea3 {
+  margin: 30px;
+  font-size: 150%;
+  font: bold;
+}
+
+#blockArea3 table td {
+  padding: 8px 30px;
+}
+
+table {
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  margin: 0px;
+}
+
+.error {
+  width: 240px;
+  color: red;
+  visibility: hidden;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+#total {
+  font-weight: bold;
+}
+
+td input, td textarea {
+  margin-bottom: 15px;
+  background: white;
+}
+
+#blockArea2 {
+  width: 550px;
+  margin-left: 35%;
+}
+
+#success {
+  visibility: hidden;
+  text-align: left;
+}
+
+

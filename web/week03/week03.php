@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Classic Violin Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="week03.js"></script>
+  <link rel="stylesheet" type="text/css" href="week03.css">
+
+</head>
+<body>
+
+  <h1>Classic Violin Shop repairs shopping cart</h1>
+
+  <div id="blockArea">
+
+    <form name="repairs" onreset="clearForm()" action="cart.php" method="POST">
+      <table onselect="getTotal();">
+        <tr>
+          <th></th>
+          <th style="width:200px;">Repair</th>
+          <th style="width:100px;">Cost</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_0" id="item_0" value="28.00" onclick="getTotal()"></td>
+          <td>Rehair Violin bow</td>
+          <td>$ 28.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_1" id="item_1" value="28.00" onclick="getTotal()"></td>
+          <td>Rehair Viola bow</td>
+          <td>$ 28.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_2" id="item_2" value="33.00" onclick="getTotal()"></td>
+          <td>Rehair Cello bow</td>
+          <td>$ 33.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_3" id="item_3" value="25.00" onclick="getTotal()"></td>
+          <td>Violin bridge</td>
+          <td>$ 25.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_4" id="item_4" value="40.00" onclick="getTotal()"></td>
+          <td>Cello bridge</td>
+          <td>$ 40.00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="item_5" id="item_5" value="15.00" onclick="getTotal()"></td>
+          <td>Violin peg</td>
+          <td>$ 15.00</td>
+        </tr>
+        <tr id="total">
+          <td></td>
+          <td>Total:</td>
+          <td id="totalCost">$ 00.00</td>
+        </tr>
+      </table>
+
+    </form>
+    <input type="button" id="validate" value="Add to Cart">              <input type="reset" id="reset" value="Clear">
+    <input type="button" id="submit" value="View cart"> 
+  </div>
+
+  <footer>
+    <img src="logo3.jpg" alt="Classic Violin Shop;">
+    Classic Violin Shop established in 1999. 
+    <p> © 2019 </p>
+  </footer>
+
+</body>
+</html>
