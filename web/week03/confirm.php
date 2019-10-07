@@ -17,8 +17,8 @@
   <meta charset="UTF-8">
   <title>Classic Violin Shop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="assign11.js"></script>
-  <link rel="stylesheet" type="text/css" href="assign11.css">
+  <script src="week03.js"></script>
+  <link rel="stylesheet" type="text/css" href="week03.css">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
 
   <div id="blockArea">
 
-    <form action="assign11a.php" method="POST">
+    <form action="cart.php" method="POST">
 
       <div id="blockArea3">
         <table style="text-align: right;">
