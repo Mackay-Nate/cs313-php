@@ -39,8 +39,8 @@ if (isset($_POST['item_5'])) {
 <meta charset="UTF-8">
 <title>Classic Violin Shop Purchase Confirmation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="assign11.js"></script>
-<link rel="stylesheet" type="text/css" href="assign11.css">
+<script src="week03.js"></script>
+<link rel="stylesheet" type="text/css" href="week03.css">
 
 
 </head>
@@ -50,7 +50,7 @@ if (isset($_POST['item_5'])) {
 
   <div id="blockArea">
 
-    <form action="assign11_a.php" method="POST">
+    <form action="confirm.php" method="POST">
       <table onselect="getTotal();">
         <tr>
           <th></th>
@@ -111,39 +111,6 @@ if (isset($_POST['item_5'])) {
             </tr>
           </table>
     
-      <div id="blockArea3">
-        <table style="text-align: right;">
-          <tr>
-            <th style="width:280px; text-align: right;"></th>
-            <th style="width:300px; text-align: left; ">Verify your information</th>
-          </tr>
-
-          <tr><td>Name</td>
-          <td style="text-align: left;"><?php echo $firstname; ?> <?php echo $lastname; ?></td></tr>
-
-          <tr><td>Address</td>
-          <td style="text-align: left;"><?php echo $address; ?></td></tr>
-
-          <tr><td>Phone number</td>
-          <td style="text-align: left;"><?php echo $phone; ?></td></tr>
-
-          <tr><td>Credit card number</td>
-          <td style="text-align: left;"><?php echo $creditcard; ?></td></tr>
-
-          <tr><td>Credit card type</td>
-          <td style="text-align: left;"><?php echo $cardtype ?></td></tr>
-
-          <tr><td>Card expiration</td>
-          <td style="text-align: left;"><?php echo $cardexp; ?></td></tr>
-
-          <tr><td>
-          <button type="submit" name="confirm">Confirm Order</button></td><td>
-          <button type="submit" name="cancel">Cancel Order</button></td></tr>
-
-          <tr><td colspan="2" id="success">Form successfully submitted</td></tr>
-
-        </table>
-      </div>
     </form>
   </div>
 
