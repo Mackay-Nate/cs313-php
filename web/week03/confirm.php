@@ -32,8 +32,7 @@
       <div id="blockArea3">
         <table style="text-align: right;">
           <tr>
-            <th style="width:400px; text-align: left;"> <?php echo $message; ?>\
-</th>
+            <th style="width:400px; text-align: left;"> <?php echo $message; ?></th>
           </tr>
 
         </table>
