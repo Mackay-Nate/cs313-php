@@ -110,7 +110,9 @@ if (isset($_POST['item_5'])) {
               <td id="totalCost">$ <?php echo $total; ?>.00</td>
             </tr>
           </table>
-    
+
+      <button type="submit" name="confirm">Confirm Order</button>
+      <button type="submit" name="cancel">Cancel Order</button>      
     </form>
   </div>
 
