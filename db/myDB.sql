@@ -1,7 +1,8 @@
 
 --creation of the Menu db 10/8
 CREATE TABLE Menu (
-  name,        varchar(80),
+  id           SERIAL NOT NULL PRIMARY KEY,
+  name,        varchar(80) NOT NULL,
   type,        varchar(16), 
   prepTime,    time, 
   cookTime,    time, 
@@ -11,11 +12,13 @@ CREATE TABLE Menu (
 
 --creation of the Member db 10/8
 CREATE TABLE Member (
-  firstName,  varchar(16)
+  id          SERIAL NOT NULL PRIMARY KEY,
+  firstName,  varchar(16) NOT NULL UNIQUE
 );
 
---data with the db
-INSERT INTO Menu VALUES ('name', 'type', prepTime, cookTime, frequency, 'ingredients'); 
+--data/template with the db
+INSERT INTO Menu VALUES ('name', 'type', prepTime, cookTime, frequency, 'ingredients');
+INSERT INTO Menu VALUES ('', '', '', '', , ''); 
 INSERT INTO Member VALUES('firstName');
 
 --Member db inserted 10/8
@@ -36,7 +39,6 @@ INSERT INTO Menu VALUES ('Breakfast burrito', 'breakfast', '00:15', '00:15', 3, 
 INSERT INTO Menu VALUES ('ramen', 'lunch', '00:00', '00:04', 3, 'ramen');
 
 --Menu db inserted 10/9
-INSERT INTO Menu VALUES ('', '', '', '', , '');
 INSERT INTO Menu VALUES ('cereal', 'breakfast', '00:00', '00:00', 2, 'cereal');
 INSERT INTO Menu VALUES ('sandwiches', 'lunch', '00:05', '00:00', 2, 'bread, cheese, deli_meat, pickles, ketchup, mustard');
 INSERT INTO Menu VALUES ('left overs', 'lunch', '00:01', '00:00', 4, 'left overs');
@@ -46,7 +48,7 @@ INSERT INTO Menu VALUES ('pancakes', 'breakfast', '00:10', '00:15', 2, 'flour, s
 INSERT INTO Menu VALUES ('waffles', 'breakfast', '00:10', '00:20', 2, 'flour, sugar, salt, eggs, oil, milk, baking soda, baking powder');
 INSERT INTO Menu VALUES ('mac & cheese', 'lunch', '00:00', '00:04', 1, 'mac & cheese');
 INSERT INTO Menu VALUES ('corn dogs', 'lunch', '00:00', '00:01', 1, 'corn dogs');
---dinner ideas, needs to be inserted 
+--dinner ideas 
 INSERT INTO Menu VALUES ('hot dogs', 'dinner', '00:00', '00:02', 1, 'hot dogs, buns, ketchup, mustard, pickles');
 INSERT INTO Menu VALUES ('lasagna', 'dinner', '00:10', '00:45', 1, 'noodles, cheedar cheese, mozzarella cheese, cottage cheese, ground beef, onion, tomato paste, basil, garlic powder, parsley');
 INSERT INTO Menu VALUES ('sausage soup', 'dinner', '00:20', '04:00', 1, 'sausage, potatoes, onion, celery, carrots, corn, chicken broth, evaporated milk, cheddar cheese');
