@@ -1,13 +1,13 @@
 
 --creation of the Menu db 10/8
 CREATE TABLE Menu (
-  id           SERIAL NOT NULL PRIMARY KEY,
-  name,        varchar(80) NOT NULL,
-  type,        varchar(16), 
-  prepTime,    time, 
-  cookTime,    time, 
-  frequency,   int, 
-  ingredients, varchar(255)
+  id          SERIAL NOT NULL PRIMARY KEY,
+  name        varchar(80) NOT NULL,
+  type        varchar(16), 
+  prepTime    time, 
+  cookTime    time, 
+  frequency   int, 
+  ingredients varchar(255)
 );
 
 --creation of the Member db 10/8
