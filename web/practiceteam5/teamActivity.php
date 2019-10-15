@@ -42,19 +42,16 @@ catch (PDOException $ex)
   	<span>Search:</span><input type="text" name="search">
     <input type="submit" value="Search">
   </form>
+
 	<?php
     $book = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM scriptures WHERE book='".$book."'") as $row) {
-      echo "<a href=\"detail.php\">";
+      echo '<a href="detail.php">';
       echo $row['book'] . ' ';
       echo $row['chapter'] . ':';
       echo $row['verse'] . ' - "';
-      echo "</a>";
+      echo '</a>';
       echo '<br>';
     }
 	?>
-</table>
-
-
-
 
