@@ -31,7 +31,7 @@ catch (PDOException $ex)
     echo $row['book'] . ' ';
     echo $row['chapter'] . ':';
     echo $row['verse'] . ' - "';
-    echo $row['contents'] . '"';
+    echo $row['content'] . '"';
     echo '<br>';
   }
 
