@@ -26,17 +26,6 @@ catch (PDOException $ex)
 
 <h3>Scripture Resources</h3> 
 
-<?php 
-  # core requirement 3
-  # foreach ($db->query('SELECT * FROM TestScriptures') as $row) { 
-  #   echo $row['book'] . ' ';
-  #   echo $row['chapter'] . ':';
-  #   echo $row['verse'] . ' - "';
-  #   // echo $row['content'] . '"'; 
-  #   echo '<br>';
-  }
-?>
-
   <form method="post" action=''>
   	<span>Search:</span><input type="text" name="search">
     <input type="submit" value="Search">
