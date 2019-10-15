@@ -35,6 +35,7 @@ catch (PDOException $ex)
   //   // echo $row['content'] . '"'; 
   //   echo '<br>';
   }
+?>
 
   //stretch 1
   <form method="post" action=''>
@@ -55,7 +56,5 @@ catch (PDOException $ex)
 </table>
 
 
-
-?>
 
 
