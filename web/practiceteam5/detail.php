@@ -24,22 +24,17 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
 ?> 
 
 <h3>Scripture Details</h3> 
 
 <?php 
-
     $id = $_GET["id"];
     foreach ($db->query("SELECT * FROM TestScriptures WHERE id='".$id."'") as $row) {
       echo $row['book'] . ' ';
       echo $row['chapter'] . ':';
       echo $row['verse'] . ' - "';
-      echo $row['content'] . '.';
+      echo $row['content'];
       echo '<br>';
     }
 ?>
-
-
-
