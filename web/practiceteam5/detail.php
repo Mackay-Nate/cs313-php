@@ -34,7 +34,7 @@ catch (PDOException $ex)
     echo "$id is id";
     echo $_GET["id"];
     $book = $_GET["id"];
-    foreach ($db->query("SELECT * FROM scriptures WHERE book='".$book."'") as $row) {
+    foreach ($db->query("SELECT * FROM TestScriptures WHERE book='".$book."'") as $row) {
       echo $row['book'] . ' ';
       echo $row['chapter'] . ':';
       echo $row['verse'] . ' - "';
