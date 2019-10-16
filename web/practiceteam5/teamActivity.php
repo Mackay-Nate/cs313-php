@@ -37,7 +37,7 @@ catch (PDOException $ex)
   <?php
     $book = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM TestScriptures WHERE book='$book' ") as $row) {
-      echo "<a href='detail.php?id=$book'>";
+      echo "<a href='detail.php?id=$row['id']'>";
       echo $row['book'] . ' ';
       echo $row['chapter'] . ':';
       echo $row['verse'];
