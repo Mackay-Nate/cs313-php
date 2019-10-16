@@ -30,6 +30,7 @@ catch (PDOException $ex)
 <h3>Scripture Details</h3> 
 
 <?php 
+    $book = $_GET[id];
     foreach ($db->query("SELECT * FROM scriptures WHERE book='".$book."'") as $row) {
       echo $row['book'] . ' ';
       echo $row['chapter'] . ':';
