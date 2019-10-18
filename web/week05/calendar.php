@@ -102,9 +102,6 @@
 
 
 
-
-
-
 <h6>Search for a meal</h6>
 <form method="post" action=''>
 	<span>Search:</span><input type="text" name="search">
@@ -119,7 +116,7 @@
       echo $row['name'] . ' is a good ';
       echo $row['type'] . ' dinner meal. It takes ';
       echo $row['prepTime'] . ' time to prepare, and ';
-      echo $row['cookTime'] . ' time to cook.'
+      echo $row['cookTime'] . ' time to cook.';
       echo '</a>';
       echo '<br>';
     }
