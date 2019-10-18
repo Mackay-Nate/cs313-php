@@ -18,9 +18,9 @@
     <div id="assignments">
       <ul>
         <li><a href="week02/week02.php">Week 02: Homepage</a></li>
-        <li><a href="index.php">Coming soon</a></li>
-        <li><a href="index.php">Coming soon</a></li>
-        <li><a href="index.php">Coming soon</a></li>
+        <li><a href="week03/confirm.php">Week 03: Shopping cart</a></li>
+        <li><a href="../db/myDB.sql">Week 04: Database</a></li>
+        <li><a href="week05/calendar.php">Week 05: Database Access</a></li>
       </ul>
     </div>
 
