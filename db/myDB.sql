@@ -13,7 +13,7 @@ CREATE TABLE Menu (
 --creation of the Member db 10/8
 CREATE TABLE Member (
   id          SERIAL NOT NULL PRIMARY KEY,
-  firstName,  varchar(16) NOT NULL UNIQUE
+  firstName   varchar(16) NOT NULL UNIQUE
 );
 
 --data/template with the db
