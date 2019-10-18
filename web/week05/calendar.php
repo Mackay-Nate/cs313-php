@@ -1,4 +1,6 @@
 <?php  
+  session_start();
+
   try
   {
     $dbUrl = getenv('DATABASE_URL');
@@ -111,13 +113,14 @@
 <?php
     $mealName = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM Menu WHERE name='$mealName' ") as $row) {
-      
-      echo "<a href='detail.php?name=$mealName'>";
-      echo $row['name'] . ' is a good ';
-      echo $row['type'] . ' dinner meal. It takes ';
-      echo $row['prepTime'] . ' time to prepare, and ';
-      echo $row['cookTime'] . ' time to cook.';
+      $id = $row['id'];
+      echo "<a href='detail.php?id=$id'>";      
+      echo $row['name'];
       echo '</a>';
+      echo ' is a good ';
+      echo $row['type'] . ' dinner meal. It takes ';
+      echo $row[prepTime] . ' time to prepare, and ';
+      echo $row[cookTime] . ' time to cook.';
       echo '<br>';
     }
 ?>
