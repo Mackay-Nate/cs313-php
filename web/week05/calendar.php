@@ -40,7 +40,7 @@
 <form>
 Enter a random number to generate the meals. <br>
 <input type="text" style="width: 40px;" id="random" name="random">
-<input type="button" value="Populate calendar">
+<input type="button" value="Populate calendar" onclick="calendar.php?random='random'">
 
 <table>
   <tr>
@@ -175,7 +175,7 @@ Enter a random number to generate the meals. <br>
       }
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      for ($i = $min + 20; $i < ($min + 5); $i++ ) { 
+      for ($i = $min + 10; $i < ($min + 5); $i++ ) { 
         $id = (($number + $i) % (($max - $min) + $min));
         echo '<td>';
         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
