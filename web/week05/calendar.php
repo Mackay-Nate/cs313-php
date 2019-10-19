@@ -80,8 +80,9 @@ Enter a random number to generate the meals. <br>
     
           echo $mealName;
           echo "</a>"; 
+        }
       }
-
+    
 
     ?>
     <td></td>
