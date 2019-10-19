@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="calendar.css">   
+  </head>
+
+<body onload="document.getElementById('random').focus();">
+
+<h1>Weekly Dinner menu</h1> 
+
+<form>
+Enter a random number to generate the meals. <br>
+<input type="text" style="width: 40px;" id="random">
+<input type="button" value="Populate calendar">
+
+<table>
+  <tr>
+    <th></th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+  </tr>
+  <tr id="breakfast">
+    <td>Breakfast</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Lunch</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Dinner</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>
+</form>
+
+<h6>Search for a meal</h6>
+<form method="post" action=''>
+	<span>Search:</span><input type="text" name="search" id="search">
+  <input type="submit" value="Search">
+</form>
+
+
+
+    <script src="calendar.js"></script>
+
+</body> 
+</html>

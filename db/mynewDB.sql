@@ -74,6 +74,8 @@ INSERT INTO Meal (name, prepTime, cookTime) VALUES ('Waffles', '00:10', '00:20')
 INSERT INTO Meal (name, prepTime, cookTime) VALUES ('Breakfast sandwiches', '00:15', '00:10'); 
 INSERT INTO Meal (name, prepTime, cookTime) VALUES ('Swedish pancakes', '00:10', '00:20');
 INSERT INTO Meal (name, prepTime, cookTime) VALUES ('German pancakes', '00:05', '00:35');
+INSERT INTO Meal (name, prepTime, cookTime) VALUES ('Biscuits & gravy', '00:15', '00:15');
+
 
 INSERT INTO Meal (name, prepTime, cookTime) VALUES ('Ramen', '00:00', '00:04'); 
 INSERT INTO Meal (name, prepTime, cookTime) VALUES ('sandwiches', '00:05', '00:00'); 
@@ -107,6 +109,7 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('1', '9');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('1', '10');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('1', '11');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('1', '12');
+INSERT INTO MenuItem (meal_type, meal_id) VALUES ('1', '30');
 
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('2', '13');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('2', '14');
@@ -143,6 +146,7 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '26');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '27');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '28');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '29');
+INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '30');
 
 SELECT MenuItem.id, Meal.name, MealType.type
 FROM ((MenuItem
