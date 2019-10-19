@@ -59,13 +59,19 @@ Enter a random number to generate the meals. <br>
                JOIN Meal ON MenuItem.meal_id = Meal.id) 
                JOIN MealType ON MenuItem.meal_type = MealType.id)
                WHERE MenuItem.meal_type = 1;";
-      $min = -1;
+      $min = 50;
+      $max = -1;
       echo $min;
-      $min1 = $db->query('SELECT MIN(id) FROM MenuItem WHERE meal_type = 1');
-      $min = min($min1->fetchAll(PDO::FETCH_ASSOC));
-      echo var_dump($min);
+      echo $max;
+      foreach ($db->query('SELECT id FROM MenuItem WHERE meal_type = 1') as $row) {
+        if ($row['id'] > $max) { 
+          $max = $row['id'];
+        }
+        if ($row['id'] < $min) { 
+          $min = $row['id'];
+        }
+      }
       //$min = 1;
-      $max = 11;
       // SELECT MAX(int(id)) 
       //       FROM ((MenuItem
       //       JOIN Meal ON MenuItem.meal_id = Meal.id) 
