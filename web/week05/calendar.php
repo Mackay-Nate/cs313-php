@@ -77,18 +77,19 @@ Enter a random number to generate the meals. <br>
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       for ($i = $min; $i < ($min + 5); $i++ ) { 
         $id = (($number + $i) % ($max - $min));
+        echo '<td>';
         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
                              FROM ((MenuItem
                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
                              JOIN MealType ON MenuItem.meal_type = MealType.id)
-                             WHERE MealType.id = $id") as $row) {
+                             WHERE MenuItem.id = $id") as $row) {
           $id = $row['id'];
           $mealName = $row['name'];
           echo "<a href='detail.php?id=$id'>";
-    
           echo $mealName;
           echo "</a>"; 
         }
+        echo '</td>';
       }
     
 
