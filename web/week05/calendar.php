@@ -178,7 +178,7 @@ Enter a random number to generate the meals. <br>
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       
-      for ($i = 1; $i < 6; i++) { 
+      for ($i = 1; $i < 6; $i++) { 
         echo '<td>';
         $results=mysql_query($query);
         $row = mysql_fetch_array($results);
