@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> </title>
-    <link rel="stylesheet" type="text/css" href=".css">   
+    <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
 <body onload="document.getElementById('random').focus();">
@@ -157,11 +157,42 @@ Enter a random number to generate the meals. <br>
   </tr>
   <tr>
     <td>Dinner</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <?php 
+      $query ="SELECT MenuItem.id, Meal.name, MealType.type
+               FROM ((MenuItem
+               JOIN Meal ON MenuItem.meal_id = Meal.id) 
+               JOIN MealType ON MenuItem.meal_type = MealType.id)
+               WHERE MenuItem.meal_type = 4;";
+      $min = 50;
+      $max = -1;
+      foreach ($db->query('SELECT id FROM MenuItem WHERE meal_type = 4') as $row) {
+        if ($row['id'] > $max) { 
+          $max = $row['id'];
+        }
+        if ($row['id'] < $min) { 
+          $min = $row['id'];
+        }
+      }
+
+      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      for ($i = $min; $i < ($min + 5); $i++ ) { 
+        $id = (($number + $i) % (($max - $min) + $min));
+        echo '<td>';
+        foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
+                             FROM ((MenuItem
+                             JOIN Meal ON MenuItem.meal_id = Meal.id) 
+                             JOIN MealType ON MenuItem.meal_type = MealType.id)
+                             WHERE MenuItem.id = $id") as $row) {
+          $id = $row['id'];
+          $mealName = $row['name'];
+          echo "<a href='detail.php?id=$id'>";
+          echo $mealName;
+          echo "</a>"; 
+        }
+        echo '</td>';
+      }
+    
+    ?> 
   </tr>
   <tr>
     <td></td>
@@ -204,7 +235,7 @@ Enter a random number to generate the meals. <br>
     }
 ?>
 
-  <script src=".js"></script>
+  <script src="calendar.js"></script>
 
 </body> 
 </html>
