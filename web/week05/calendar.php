@@ -62,7 +62,7 @@ Enter a random number to generate the meals. <br>
       $min1 = $db->query('SELECT MIN(id) FROM MenuItem WHERE meal_type = 1');
       $min = $min1->fetchAll(PDO::FETCH_ASSOC);
       echo var_dump($min);
-      $min = 1;
+      //$min = 1;
       $max = 11;
       // SELECT MAX(int(id)) 
       //       FROM ((MenuItem
