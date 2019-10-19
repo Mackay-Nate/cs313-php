@@ -1,0 +1,12 @@
+
+body { 
+  margin: 3px;
+}
+
+table tr th { 
+  width: 150px;
+}
+
+breakfast { 
+  border: 2px solid black;
+}

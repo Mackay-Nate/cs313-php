@@ -33,12 +33,14 @@
     <link rel="stylesheet" type="text/css" href=".css">   
   </head>
 
-<body>
+<body onload="document.getElementById('random').focus();">
 
 <h1>Dinner menu</h1> 
 
-<input type="button" value="Populate calendar" onclick="">
-
+<form>
+Enter a random number to generate the meals. <br>
+<input type="text" style="width: 40px;" id="random" name="random">
+<input type="button" value="Populate calendar">
 
 <table>
   <tr>
@@ -51,6 +53,37 @@
   </tr>
   <tr>
     <td>Breakfast</td>
+    <?php 
+      $query ="SELECT MenuItem.id, Meal.name, MealType.type
+               FROM ((MenuItem
+               JOIN Meal ON MenuItem.meal_id = Meal.id) 
+               JOIN MealType ON MenuItem.meal_type = MealType.id)
+               WHERE MealType.id = 1;"
+      $min ="SELECT MIN(id) AS SmallestId 
+             FROM ((MenuItem
+             JOIN Meal ON MenuItem.meal_id = Meal.id) 
+             JOIN MealType ON MenuItem.meal_type = MealType.id)
+             WHERE MealType.id = 1;"
+      $max ="SELECT MAX(id) AS LargestId 
+             FROM ((MenuItem
+             JOIN Meal ON MenuItem.meal_id = Meal.id) 
+             JOIN MealType ON MenuItem.meal_type = MealType.id)
+             WHERE MealType.id = 1;"
+
+      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      for ($i = $min; $i < $min + 5; $i++ ) { 
+        $id = $number + $i % 13;
+        foreach ($db->query("SELECT * FROM Meal WHERE id='$id' ") as $row) {
+          $id = $row['id'];
+          $mealName = $row['name'];
+          echo "<a href='detail.php?id=$id'>";
+    
+          echo $mealName;
+          echo "</a>"; 
+      }
+
+
+    ?>
     <td></td>
     <td></td>
     <td></td>
@@ -116,13 +149,13 @@
 
 
 </table>
-
+</form>
 
 
 
 <h6>Search for a meal</h6>
 <form method="post" action=''>
-	<span>Search:</span><input type="text" name="search">
+	<span>Search:</span><input type="text" name="search" id="search">
   <input type="submit" value="Search">
 </form>
 
