@@ -180,7 +180,7 @@ Enter a random number to generate the meals. <br>
       
       for ($i = 1; $i < 6; $i++) { 
         echo '<td>';
-        $results=mysql_query($query);
+        $results=query($query);
         $row = mysql_fetch_array($results);
         $mealName = $row['name'];
         echo "<a href='detail.php?id=$id'>";
