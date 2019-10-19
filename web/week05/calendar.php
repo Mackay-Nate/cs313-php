@@ -176,7 +176,7 @@ Enter a random number to generate the meals. <br>
       echo $min;
       echo $max;
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      for ($i = $min + 10; $i < ($min + 5); $i++ ) { 
+      for ($i = $min + 1; $i < ($min + 5); $i++ ) { 
         $id = (($number + $i) % (($max - $min) + $min));
         echo '<td>';
         echo $id;
