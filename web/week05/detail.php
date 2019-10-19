@@ -37,7 +37,6 @@
 
       echo $row[prepTime] . ' time to prepare, and ';
       echo $row['cookTime'] . ' time to cook.';
-      echo $db;
       echo '<br>';
     }
 ?>
