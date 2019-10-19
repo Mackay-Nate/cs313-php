@@ -59,7 +59,9 @@ Enter a random number to generate the meals. <br>
                JOIN Meal ON MenuItem.meal_id = Meal.id) 
                JOIN MealType ON MenuItem.meal_type = MealType.id)
                WHERE MealType.id = 1;";
-      $min = SELECT MIN(id) FROM MenuItem WHERE id = 1;
+      $min = SELECT MIN(id) FROM MenuItem WHERE meal_type = 1;
+      echo var_dump($min);
+      $min = 1;
       $max = 11;
       // SELECT MAX(int(id)) 
       //       FROM ((MenuItem
