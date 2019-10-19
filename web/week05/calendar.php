@@ -39,7 +39,7 @@
 
 <form>
 Enter a random number to generate the meals. <br>
-<input type="text" style="width: 40px;" id="random" name="random">
+<input type="text" style="width: 40px;" id="random" name="random" value="1">
 <input type="button" value="Populate calendar" onclick='calendar.php?random="random"'>
 
 <table>
