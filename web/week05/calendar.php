@@ -66,6 +66,14 @@
     <td></td>
   </tr>
   <tr>
+    <td>chef</td>
+    <td>Ava</td>
+    <td>Natalie</td>
+    <td>Jen</td>
+    <td>Ava</td>
+    <td>Jen</td>
+  </tr>
+  <tr>
     <td>Lunch</td>
     <td></td>
     <td></td>
@@ -97,6 +105,14 @@
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>chef</td>
+    <td>Janice</td>
+    <td>Jen</td>
+    <td>Janice</td>
+    <td>Jen</td>
+    <td>Nate</td>
+  </tr>
 
 
 </table>
@@ -119,7 +135,7 @@
       echo '</a>';
       echo ' is a good ';
       echo $row['type'] . ' dinner meal. It takes ';
-      echo $row[prepTime] . ' time to prepare, and ';
+      echo $row['prepTime'] . ' time to prepare, and ';
       echo $row[cookTime] . ' time to cook.';
       echo '<br>';
     }
