@@ -61,8 +61,6 @@ Enter a random number to generate the meals. <br>
                WHERE MenuItem.meal_type = 1;";
       $min = 50;
       $max = -1;
-      echo $min;
-      echo $max;
       foreach ($db->query('SELECT id FROM MenuItem WHERE meal_type = 1') as $row) {
         if ($row['id'] > $max) { 
           $max = $row['id'];
@@ -71,14 +69,6 @@ Enter a random number to generate the meals. <br>
           $min = $row['id'];
         }
       }
-      //$min = 1;
-      // SELECT MAX(int(id)) 
-      //       FROM ((MenuItem
-      //       JOIN Meal ON MenuItem.meal_id = Meal.id) 
-      //       JOIN MealType ON MenuItem.meal_type = MealType.id)
-      //       WHERE MealType.id = 1;
-            echo $min;
-            echo $max; 
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       for ($i = $min; $i < ($min + 5); $i++ ) { 
@@ -100,11 +90,6 @@ Enter a random number to generate the meals. <br>
     
 
     ?>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
   </tr>
   <tr>
     <td></td>
@@ -124,11 +109,43 @@ Enter a random number to generate the meals. <br>
   </tr>
   <tr>
     <td>Lunch</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <?php 
+      $query ="SELECT MenuItem.id, Meal.name, MealType.type
+               FROM ((MenuItem
+               JOIN Meal ON MenuItem.meal_id = Meal.id) 
+               JOIN MealType ON MenuItem.meal_type = MealType.id)
+               WHERE MenuItem.meal_type = 2;";
+      $min = 50;
+      $max = -1;
+      foreach ($db->query('SELECT id FROM MenuItem WHERE meal_type = 2') as $row) {
+        if ($row['id'] > $max) { 
+          $max = $row['id'];
+        }
+        if ($row['id'] < $min) { 
+          $min = $row['id'];
+        }
+      }
+
+      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      for ($i = $min; $i < ($min + 5); $i++ ) { 
+        $id = (($number + $i) % ($max - $min));
+        echo '<td>';
+        foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
+                             FROM ((MenuItem
+                             JOIN Meal ON MenuItem.meal_id = Meal.id) 
+                             JOIN MealType ON MenuItem.meal_type = MealType.id)
+                             WHERE MenuItem.id = $id") as $row) {
+          $id = $row['id'];
+          $mealName = $row['name'];
+          echo "<a href='detail.php?id=$id'>";
+          echo $mealName;
+          echo "</a>"; 
+        }
+        echo '</td>';
+      }
+    
+
+    ?>
   </tr>
   <tr>
     <td></td>
