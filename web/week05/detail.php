@@ -30,10 +30,10 @@
 <?php
   $id = $_GET["id"];
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
-      
+      $prepTime = $row['prepTime'];
       echo $row['name'];
       echo ' is a good meal. It takes ';
-      echo 'It takes $row[prepTime] or $row["prepTime"] minutes to prepare it.'
+      echo 'It takes $prepTime minutes to prepare it.'
 
       echo $row[prepTime] . ' time to prepare, and ';
       echo $row['cookTime'] . ' time to cook.';
