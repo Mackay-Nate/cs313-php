@@ -33,7 +33,7 @@
       $prepTime = $row['prepTime'];
       echo $row['name'];
       echo ' is a good meal. It takes ';
-      echo 'It takes some minutes to prepare it.'
+      echo 'It takes $prepTime minutes to prepare it.';
 
       echo '<br>';
     }
