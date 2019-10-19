@@ -35,8 +35,6 @@
       echo ' is a good meal. It takes ';
       echo 'It takes $prepTime minutes to prepare it.'
 
-      echo $row[prepTime] . ' time to prepare, and ';
-      echo $row['cookTime'] . ' time to cook.';
       echo '<br>';
     }
 ?>
