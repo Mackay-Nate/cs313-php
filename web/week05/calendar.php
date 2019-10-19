@@ -128,15 +128,12 @@
 
 <?php
     $mealName = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
-    foreach ($db->query("SELECT * FROM Menu WHERE name='$mealName' ") as $row) {
+    foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
       $id = $row['id'];
       echo "<a href='detail.php?id=$id'>";      
       echo $row['name'];
       echo '</a>';
-      echo ' is a good ';
-      echo $row['type'] . ' dinner meal. It takes ';
-      echo $row['prepTime'] . ' time to prepare, and ';
-      echo $row[cookTime] . ' time to cook.';
+      echo ' is a good meal.';
       echo '<br>';
     }
 ?>

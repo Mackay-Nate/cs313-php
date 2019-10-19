@@ -29,15 +29,12 @@
 
 <?php
   $id = $_GET["id"];
-  foreach ($db->query("SELECT * FROM Menu WHERE id='".$id."'") as $row) {
+  foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       
       echo $row['name'];
-      echo ' is a good ';
-      echo $row['type'] . ' dinner meal. It takes ';
+      echo ' is a good meal. It takes ';
       echo $row[prepTime] . ' time to prepare, and ';
-      echo $row[cookTime] . ' time to cook.';
+      echo $row['cookTime'] . ' time to cook.';
       echo '<br>';
-      echo 'Ingredients for ' . $row['name'] . 'are: ';
-      echo $row['ingredients'];
     }
 ?>
