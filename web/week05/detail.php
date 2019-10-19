@@ -34,7 +34,9 @@
       echo $row['name'];
       echo ' is a good meal. It takes ';
       echo 'It takes ' . $prepTime . ' minutes to prepare it.';
-
       echo '<br>';
+      echo 'It takes ';
+      echo TIME_FORMAT($prepTime, "%H %i"); 
+      echo 'minutes.';
     }
 ?>
