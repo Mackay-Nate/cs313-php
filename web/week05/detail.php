@@ -36,7 +36,7 @@
       echo 'It takes ' . $prepTime . ' minutes to prepare it.';
       echo '<br>';
       echo 'It takes ';
-      echo TIME_FORMAT($prepTime, "%H %i"); 
+      echo MINUTE($prepTime, "%H %i"); 
       echo 'minutes.';
     }
 ?>
