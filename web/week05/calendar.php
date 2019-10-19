@@ -73,7 +73,7 @@ Enter a random number to generate the meals. <br>
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       for ($i = $min; $i < $min + 5; $i++ ) { 
         $id = $number + $i % 13;
-        foreach ($db->query("SELECT * FROM Meal WHERE id='$id' ") as $row) {
+        foreach ($db->$query as $row) {
           $id = $row['id'];
           $mealName = $row['name'];
           echo "<a href='detail.php?id=$id'>";
