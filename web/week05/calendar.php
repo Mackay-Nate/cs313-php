@@ -61,7 +61,8 @@ Enter a random number to generate the meals. <br>
                WHERE MenuItem.meal_type = 1;";
       // $min1 = $db->query('SELECT MIN(id) FROM MenuItem WHERE meal_type = 1');
       // $min = $min1->fetchAll(PDO::FETCH_ASSOC);
-      $min = 0;
+      $min = -1;
+      echo $min;
       foreach ($db->query('SELECT MIN(id) FROM MenuItem WHERE meal_type = 1') as $row) { 
         $min = $row['MIN(id)'];
       }
