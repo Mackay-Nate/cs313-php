@@ -178,36 +178,36 @@ Enter a random number to generate the meals. <br>
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       
-      for ($i = 1; $i < 6; $i++) { 
-        echo '<td>';
-        $results=query($query);
-        $row = mysql_fetch_array($results);
-        $mealName = $row['name'];
-        echo "<a href='detail.php?id=$id'>";
-        echo $mealName;
-        echo "</a>";
-        echo '</td>';
-      }
-
-      // for ($i = $min + 1; $i < ($min + 5); $i++ ) { 
-      //   $id = (($number + $i) % (($max - $min) + $min));
+      // for ($i = 1; $i < 6; $i++) { 
       //   echo '<td>';
-      //   echo $id;
-      //   foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
-      //                        FROM ((MenuItem
-      //                        JOIN Meal ON MenuItem.meal_id = Meal.id) 
-      //                        JOIN MealType ON MenuItem.meal_type = MealType.id)
-      //                        WHERE MenuItem.id = $id") as $row) {
-      //     $id = $row['id'];
-      //     echo $id;
-      //     $mealName = $row['name'];
-      //     echo "<a href='detail.php?id=$id'>";
-      //     echo $mealName;
-      //     echo "</a>"; 
-      //   }
+      //   $results=query($query);
+      //   $row = mysql_fetch_array($results);
+      //   $mealName = $row['name'];
+      //   echo "<a href='detail.php?id=$id'>";
+      //   echo $mealName;
+      //   echo "</a>";
       //   echo '</td>';
       // }
-    
+
+       for ($i = $min + 3; $i < ($min + 5); $i++ ) { 
+         $id = (($number + $i) % (($max - $min) + $min));
+         echo '<td><h2>';
+         echo $id;
+         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
+                              FROM ((MenuItem
+                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
+                              JOIN MealType ON MenuItem.meal_type = MealType.id)
+                              WHERE MenuItem.id = $id") as $row) {
+           $id = $row['id'];
+           echo $id;
+           $mealName = $row['name'];
+           echo "<a href='detail.php?id=$id'>";
+           echo $mealName;
+           echo "</a>"; 
+         }
+         echo '</h2></td>';
+       }
+
     ?> 
   </tr>
   <tr>
