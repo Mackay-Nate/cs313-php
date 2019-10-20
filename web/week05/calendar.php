@@ -87,8 +87,6 @@ Enter a random number to generate the meals. <br>
         }
         echo '</h3></td>';
       }
-    
-
     ?>
   </tr>
   <tr>
@@ -144,7 +142,6 @@ Enter a random number to generate the meals. <br>
         echo '</h3></td>';
       }
     
-
     ?>
   </tr>
   <tr>
@@ -173,8 +170,6 @@ Enter a random number to generate the meals. <br>
           $min = $row['id'];
         }
       }
-      echo $min;
-      echo $max;
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       
@@ -228,7 +223,6 @@ Enter a random number to generate the meals. <br>
 
 </table>
 </form>
-
 
 
 <h6>Search for a meal</h6>
