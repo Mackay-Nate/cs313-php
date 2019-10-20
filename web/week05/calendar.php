@@ -189,7 +189,7 @@ Enter a random number to generate the meals. <br>
       //   echo '</td>';
       // }
 
-       for ($i = $min + 13; $i < ($min + 5); $i++ ) { 
+       for ($i = $min + 23; $i < ($min + 5); $i++ ) { 
          $id = (($number + $i) % (($max - $min) + $min));
          echo '<td><h3>';
          foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
