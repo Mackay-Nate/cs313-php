@@ -73,7 +73,7 @@ Enter a random number to generate the meals. <br>
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       for ($i = $min; $i < ($min + 5); $i++ ) { 
         $id = (($number + $i) % ($max - $min));
-        echo '<td>';
+        echo '<td><h3>';
         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
                              FROM ((MenuItem
                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -85,7 +85,7 @@ Enter a random number to generate the meals. <br>
           echo $mealName;
           echo "</a>"; 
         }
-        echo '</td>';
+        echo '</h3></td>';
       }
     
 
@@ -129,7 +129,7 @@ Enter a random number to generate the meals. <br>
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       for ($i = $min; $i < ($min + 5); $i++ ) { 
         $id = (($number + $i) % (($max - $min) + $min));
-        echo '<td>';
+        echo '<td><h3>';
         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
                              FROM ((MenuItem
                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -141,7 +141,7 @@ Enter a random number to generate the meals. <br>
           echo $mealName;
           echo "</a>"; 
         }
-        echo '</td>';
+        echo '</h3></td>';
       }
     
 
@@ -189,10 +189,9 @@ Enter a random number to generate the meals. <br>
       //   echo '</td>';
       // }
 
-       for ($i = $min + 3; $i < ($min + 5); $i++ ) { 
+       for ($i = $min + 13; $i < ($min + 5); $i++ ) { 
          $id = (($number + $i) % (($max - $min) + $min));
-         echo '<td><h2>';
-         echo $id;
+         echo '<td><h3>';
          foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
                               FROM ((MenuItem
                               JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -205,7 +204,7 @@ Enter a random number to generate the meals. <br>
            echo $mealName;
            echo "</a>"; 
          }
-         echo '</h2></td>';
+         echo '</h3></td>';
        }
 
     ?> 
