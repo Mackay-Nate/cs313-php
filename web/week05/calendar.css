@@ -1,13 +1,25 @@
 
 body { 
-  margin: 3px;
+  background: lightblue;
+  margin: 0px 0px 120px 120px;
+}
+
+table { 
+  margin: auto;
+  background: lightcyan;
+  padding: 15px;
 }
 
 table tr th { 
   width: 170px;
 }
+
 table tr { 
   height: 30px;
+}
+
+a { 
+  color: darkgreen;
 }
 
 breakfast { 
