@@ -24,6 +24,11 @@
   }
   ?>
 
+<head>
+  <title> Meal Details</title>
+  <link rel="stylesheet" type="text/css" href="calendar.css">   
+</head>
+
 <h3>Meal Details</h3> 
 
 

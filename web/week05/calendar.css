@@ -5,7 +5,7 @@ body {
 }
 
 table { 
-  margin: auto;
+  margin: 45px;
   background: lightcyan;
   padding: 15px;
 }
@@ -19,7 +19,7 @@ table tr {
 }
 
 a { 
-  color: darkgreen;
+  color: darkblue;
 }
 
 breakfast { 
