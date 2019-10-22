@@ -21,7 +21,6 @@
 
   		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		$book = $_POST['book'];
 	}
 	catch (PDOException $ex)
 	{
@@ -43,10 +42,7 @@
 		<br>Topic: 
 		<br>
 		<?php
-		// 	foreach ($db->query("SELECT * FROM topic") as $row) {
-		// 		echo '<input type="checkbox" name="topics[]"' . $row["id"] . '" value="' . $row["name"] . '>' . $row["name"];
-		// 		echo '<br/>';
-		// }
+		
 		$statement = $db->prepare('SELECT id, name FROM topic');
 		$statement->execute();
 

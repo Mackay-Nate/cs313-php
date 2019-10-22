@@ -40,20 +40,9 @@
 		$statement->execute();
 		$scripture_id = $db->lastInsertId("testscriptures_id_seq");
 
-		// foreach ($topics as $topic_id)
-  	// {
-	  // 	echo "Scripture_id: $scripture_id, topic_id: $topic_id";
- 
-		//   $statement = $db->prepare('INSERT INTO ScriptureToTopics (scripture_id, topic_id) VALUES (:scripture_id, :topic_id)');
-
-		// 	$statement->bindValue(':scripture_id', $scripture_id);
-  	// 	$statement->bindValue(':topic_id', $topic_id);
-	  // 	$statement->execute();
-		//}
 		// Now go through each topic id in the list from the user's checkboxes
   	foreach ($topicIds as $topicId)
 	  {
-		  echo "scripture_id: $scripture_id, topic_id: $topicId";
   		// Again, first prepare the statement
 	  	$statement = $db->prepare('INSERT INTO ScriptureToTopics(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)');
 		  // Then, bind the values
@@ -70,7 +59,7 @@
 
 foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> <br/>Topics: ";
- 		// get the topics now for this scripture
+ 		// get the topics for this scripture
 	  $stmtTopics = $db->prepare('SELECT name FROM topic t'
 		 . ' INNER JOIN ScriptureToTopics st ON st.topic_id = t.id'
 		 . ' WHERE st.scripture_id = :scripture_id');
@@ -81,10 +70,6 @@ foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 		{
 			echo $topicRow['name'] . ' ';
 		}
-	//  foreach ($db->query("SELECT *
-	//  			FROM topic WHERE topic.id = " . $row['id']) as $topic) {
-	//  		echo $topic['name'] . " ";
-	//  	}
 	
 	echo '<br>';
   echo '"' . $row['content'] . '"<br><br>';
