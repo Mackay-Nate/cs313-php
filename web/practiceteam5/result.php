@@ -70,7 +70,14 @@
 
 foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> <br/>Topics: ";
- 	while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+ 		// get the topics now for this scripture
+	  $stmtTopics = $db->prepare('SELECT name FROM topic t'
+		 . ' INNER JOIN scripture_topic st ON st.topicId = t.id'
+		 . ' WHERE st.scriptureId = :scriptureId');
+	  $stmtTopics->bindValue(':scriptureId', $row['id']);
+	  $stmtTopics->execute();
+	 
+    while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
 		{
 			echo $topicRow['name'] . ' ';
 		}
