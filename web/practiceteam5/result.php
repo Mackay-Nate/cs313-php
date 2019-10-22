@@ -37,7 +37,7 @@
 		$statement->bindValue(':content', $content);
 
 		$statement->execute();
-		$scripture_id = $db->lastInsertId("scripture_id_seq");
+		$scripture_id = $db->lastInsertId("testscriptures_id_seq");
 
 		foreach ($topics as $topic_id)
   	{
