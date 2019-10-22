@@ -56,7 +56,7 @@ Enter a random number to generate the meals. <br>
     <?php 
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      foreach ($db->query("SELECT MealItem.meal_id, Meal.name, MealType.type, 
+      foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
