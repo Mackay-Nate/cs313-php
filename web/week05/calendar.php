@@ -68,7 +68,9 @@ Enter a random number to generate the meals. <br>
                              FROM ((MenuItem
                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
                              JOIN MealType ON MenuItem.meal_type = MealType.id)
-                             WHERE MenuItem.id = $id") as $row) {
+                             WHERE MenuItem.id = $id
+                             ORDER BY RANDOM()
+                             LIMIT 5") as $row) {
           $id = $row['id'];
           $mealName = $row['name'];
           echo "<a href='detail.php?id=$id'>";
