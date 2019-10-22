@@ -41,6 +41,7 @@
 		<br>Verse: <input type="text" name="verse" /> <br/>
 		<br>Content: <input type="textarea" name="content" />
 		<br>Topic: 
+		<br>
 		<?php
 		// 	foreach ($db->query("SELECT * FROM topic") as $row) {
 		// 		echo '<input type="checkbox" name="topics[]"' . $row["id"] . '" value="' . $row["name"] . '>' . $row["name"];
@@ -48,7 +49,7 @@
 		// }
 		$statement = $db->prepare('SELECT id, name FROM topic');
 		$statement->execute();
-		
+
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	  {
   		$id = $row['id'];
