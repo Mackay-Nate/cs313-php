@@ -145,7 +145,9 @@ Enter a random number to generate the meals. <br>
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
-                           WHERE MenuItem.id = $id") as $row) {
+                           WHERE MenuItem.meal_type = 4
+                           ORDER BY RANDOM()
+                           LIMIT 5") as $row) {
         echo '<td><h3>';
         $id = $row['id'];
         $mealName = $row['name'];
@@ -197,17 +199,22 @@ Enter a random number to generate the meals. <br>
     }
 ?>
 
-<form method="post" action="insert.php">
-  Meal name 
-  <input type="text" name="meal_name"><br>
-  What is the cook time?
-  <input type="text" name="cook"><br>
-  How long does it take to prepare?
-  <input type="text" name="prep"><br>
-
-
-
-</form>
+  <form method="post" action="insert.php" id="form2" style="width: 500px;">
+  
+    <table>
+      <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
+      <tr><td>Meal name</td> 
+        <td><input type="text" name="meal_name"></td></tr>
+      <tr><td>What is the cook time?</td>
+        <td><input type="text" name="cook" placeholder="00:00"></td></tr>
+      <tr><td>How long does it take to prepare?</td>
+        <td><input type="text" name="prep" placeholder="00:00"></td></tr>
+    </table>
+    <input type="checkbox" name="type" value="breakfast">Breakfast<br>
+    <input type="checkbox" name="type" value="lunch">Lunch<br>
+    <input type="checkbox" name="type" value="dinner">Dinner<br>
+    <input type="submit">
+  </form>
 
   <script src="calendar.js"></script>
 

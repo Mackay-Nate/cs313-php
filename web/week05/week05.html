@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title> Dinner</title>
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
@@ -14,10 +14,10 @@
 
 <form>
 Enter a random number to generate the meals. <br>
-<input type="text" style="width: 40px;" id="random">
+<input type="text" style="width: 40px;" id="random" placeholder="1">
 <input type="button" value="Populate calendar">
 
-<table>
+<table id="table1">
   <tr>
     <th></th>
     <th>Monday</th>
@@ -28,9 +28,9 @@ Enter a random number to generate the meals. <br>
   </tr>
   <tr id="breakfast">
     <td>Breakfast</td>
+    <td><a href="">This is a link</a></td>
     <td></td>
-    <td></td>
-    <td></td>
+    <td><a href="">Yeah me too</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -84,6 +84,23 @@ Enter a random number to generate the meals. <br>
   <input type="submit" value="Search">
 </form>
 
+
+<form method="post" action="insert.php" id="form2" style="width: 500px;">
+  
+  <table>
+    <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
+    <tr><td>Meal name</td> 
+      <td><input type="text" name="meal_name"></td></tr>
+    <tr><td>What is the cook time?</td>
+      <td><input type="text" name="cook" placeholder="00:00"></td></tr>
+    <tr><td>How long does it take to prepare?</td>
+      <td><input type="text" name="prep" placeholder="00:00"></td></tr>
+  </table>
+  <input type="checkbox" name="type" value="breakfast">Breakfast<br>
+  <input type="checkbox" name="type" value="lunch">Lunch<br>
+  <input type="checkbox" name="type" value="dinner">Dinner<br>
+  <input type="submit">
+</form>
 
 
     <script src="calendar.js"></script>

@@ -31,9 +31,8 @@
 
 <h3>Meal Details</h3> 
 
-
 <?php
-  $id = $_GET["id"];
+  $id = htmlspecialchars($_GET["id"]);
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
       echo $row['name'];

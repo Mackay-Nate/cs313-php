@@ -139,7 +139,7 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '19');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '20');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '21');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '22');
-INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '24');
+INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '23');  /*mistake corrected*/
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '24');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '25');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '26');
@@ -152,4 +152,13 @@ SELECT MenuItem.id, Meal.name, MealType.type
 FROM ((MenuItem
 JOIN Meal ON MenuItem.meal_id = Meal.id) 
 JOIN MealType ON MenuItem.meal_type = MealType.id
+
+ORDER BY RANDOM()
+LIMIT 5
 );
+
+/* correct an item */
+UPDATE MenuItem 
+SET meal_type = '4', meal_id = '23'
+WHERE id = 40;
+
