@@ -54,25 +54,15 @@ Enter a random number to generate the meals. <br>
   <tr>
     <td>Breakfast</td>
     <?php 
-      $query ="SELECT MenuItem.id, Meal.name, MealType.type
-               FROM ((MenuItem
-               JOIN Meal ON MenuItem.meal_id = Meal.id) 
-               JOIN MealType ON MenuItem.meal_type = MealType.id)
-               WHERE MenuItem.meal_type = 1;";
-      $min = 50;
-      $max = -1;
-      foreach ($db->query('SELECT id FROM MenuItem WHERE meal_type = 1') as $row) {
-        if ($row['id'] > $max) { 
-          $max = $row['id'];
-        }
-        if ($row['id'] < $min) { 
-          $min = $row['id'];
-        }
-      }
+      // $query ="SELECT MenuItem.id, Meal.name, MealType.type
+      //          FROM ((MenuItem
+      //          JOIN Meal ON MenuItem.meal_id = Meal.id) 
+      //          JOIN MealType ON MenuItem.meal_type = MealType.id)
+      //          WHERE MenuItem.meal_type = 1;";
+      // $min = 50;
+      // $max = -1;
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      for ($i = $min; $i < ($min + 5); $i++ ) { 
-        $id = (($number + $i) % ($max - $min));
         echo '<td><h3>';
         foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
                              FROM ((MenuItem
@@ -86,7 +76,7 @@ Enter a random number to generate the meals. <br>
           echo "</a>"; 
         }
         echo '</h3></td>';
-      }
+
     ?>
   </tr>
   <tr>
@@ -242,6 +232,18 @@ Enter a random number to generate the meals. <br>
       echo '<br>';
     }
 ?>
+
+<form method="post" action="insert.php">
+  Meal name 
+  <input type="text" name="meal_name"><br>
+  What is the cook time?
+  <input type="text" name="cook"><br>
+  How long does it take to prepare?
+  <input type="text" name="prep"><br>
+
+
+
+</form>
 
   <script src="calendar.js"></script>
 
