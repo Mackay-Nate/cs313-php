@@ -25,7 +25,8 @@
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse   = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
-		$topics  = htmlspecialchars($_POST['topics[]']);
+		// $topicids  = htmlspecialchars($_POST['topics[]']);
+		$topicIds = $_POST['chkTopics'];
 
     $query = 'INSERT INTO TestScriptures (book, chapter, verse, content)
 		VALUES (:book, :chapter, :verse, :content)';
@@ -39,15 +40,26 @@
 		$statement->execute();
 		$scripture_id = $db->lastInsertId("testscriptures_id_seq");
 
-		foreach ($topics as $topic_id)
-  	{
-	  	echo "Scripture_id: $scripture_id, topic_id: $topic_id";
+		// foreach ($topics as $topic_id)
+  	// {
+	  // 	echo "Scripture_id: $scripture_id, topic_id: $topic_id";
  
-		  $statement = $db->prepare('INSERT INTO ScriptureToTopics (scripture_id, topic_id) VALUES (:scripture_id, :topic_id)');
+		//   $statement = $db->prepare('INSERT INTO ScriptureToTopics (scripture_id, topic_id) VALUES (:scripture_id, :topic_id)');
 
-			$statement->bindValue(':scripture_id', $scripture_id);
-  		$statement->bindValue(':topic_id', $topic_id);
-	  	$statement->execute();
+		// 	$statement->bindValue(':scripture_id', $scripture_id);
+  	// 	$statement->bindValue(':topic_id', $topic_id);
+	  // 	$statement->execute();
+		//}
+		// Now go through each topic id in the list from the user's checkboxes
+  	foreach ($topicIds as $topicId)
+	  {
+		  echo "scripture_id: $scriptureId, topic_id: $topicId";
+  		// Again, first prepare the statement
+	  	$statement = $db->prepare('INSERT INTO ScriptureToTopic(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)');
+		  // Then, bind the values
+  		$statement->bindValue(':scripture_id', $scriptureId);
+	  	$statement->bindValue(':topic_id', $topicId);
+		  $statement->execute();
   	}
 	}
 	catch (PDOException $ex)
@@ -62,6 +74,7 @@ foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	//  			FROM topic WHERE topic.id = " . $row['id']) as $topic) {
 	//  		echo $topic['name'] . " ";
 	//  	}
+	
 	echo '<br>';
   echo '"' . $row['content'] . '"<br><br>';
 }
