@@ -29,7 +29,7 @@
   		die();
 	}
 
-foreach ($db->query("SELECT TestScriptures.* FROM scripture ") as $row) {
+foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> <br/>Topics: ";
 	// foreach ($db->query("SELECT *
 	// 			FROM topic WHERE topic.id = " . $row['topic_id']) as $topic) {
