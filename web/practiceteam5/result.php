@@ -55,7 +55,7 @@
 	  {
 		  echo "scripture_id: $scriptureId, topic_id: $topicId";
   		// Again, first prepare the statement
-	  	$statement = $db->prepare('INSERT INTO ScriptureToTopic(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)');
+	  	$statement = $db->prepare('INSERT INTO ScriptureToTopics(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)');
 		  // Then, bind the values
   		$statement->bindValue(':scripture_id', $scriptureId);
 	  	$statement->bindValue(':topic_id', $topicId);
@@ -70,6 +70,10 @@
 
 foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> <br/>Topics: ";
+ 	while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+		{
+			echo $topicRow['name'] . ' ';
+		}
 	//  foreach ($db->query("SELECT *
 	//  			FROM topic WHERE topic.id = " . $row['id']) as $topic) {
 	//  		echo $topic['name'] . " ";
