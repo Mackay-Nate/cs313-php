@@ -42,7 +42,7 @@ Enter a random number to generate the meals. <br>
 <input type="text" style="width: 40px;" id="random" name="random" value="1">
 <input type="button" value="Populate calendar" onclick='calendar.php?random="random"'>
 
-<table>
+<table id="table1">
   <tr>
     <th></th>
     <th>Monday</th>
@@ -54,13 +54,6 @@ Enter a random number to generate the meals. <br>
   <tr>
     <td>Breakfast</td>
     <?php 
-      // $query ="SELECT MenuItem.id, Meal.name, MealType.type
-      //          FROM ((MenuItem
-      //          JOIN Meal ON MenuItem.meal_id = Meal.id) 
-      //          JOIN MealType ON MenuItem.meal_type = MealType.id)
-      //          WHERE MenuItem.meal_type = 1;";
-      // $min = 50;
-      // $max = -1;
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
@@ -71,9 +64,10 @@ Enter a random number to generate the meals. <br>
                            ORDER BY RANDOM()
                            LIMIT 5") as $row) {
         $id = $row['id'];
+        $mealid = $row['meal_id'];
         $mealName = $row['name'];
         echo '<td><h3>';
-        echo "<a href='detail.php?id=$id'>";
+        echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
         echo "</a>"; 
         echo '</h3></td>';
