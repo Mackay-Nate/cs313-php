@@ -46,6 +46,9 @@
 		// 		echo '<input type="checkbox" name="topics[]"' . $row["id"] . '" value="' . $row["name"] . '>' . $row["name"];
 		// 		echo '<br/>';
 		// }
+		$statement = $db->prepare('SELECT id, name FROM topic');
+		$statement->execute();
+		
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	  {
   		$id = $row['id'];
