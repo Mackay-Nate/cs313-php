@@ -25,7 +25,7 @@
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse   = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
-		$topics  = htmlspecialchars($_POST{'topics'});
+		$topics  = htmlspecialchars($_POST['topics[]']);
 
     $query = 'INSERT INTO TestScriptures (book, chapter, verse, content)
 		VALUES (:book, :chapter, :verse, :content)';
