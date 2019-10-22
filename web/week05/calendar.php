@@ -63,11 +63,11 @@ Enter a random number to generate the meals. <br>
                            WHERE MenuItem.meal_type = 1
                            ORDER BY RANDOM()
                            LIMIT 5") as $row) {
-        $id = $row['id'];
+        //$id = $row['id'];
         $mealid =   $row['meal_id'];
         $mealName = $row['name'];
         echo '<td><h3>';
-        echo "<a href='detail.php?id=$id'>";
+        echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
         echo "</a>"; 
         echo '</h3></td>';
@@ -100,7 +100,7 @@ Enter a random number to generate the meals. <br>
                WHERE MenuItem.meal_type = 2;";
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type
+      foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
@@ -108,9 +108,10 @@ Enter a random number to generate the meals. <br>
                            ORDER BY RANDOM()
                            LIMIT 5") as $row) {
         echo '<td><h3>';
-        $id = $row['id'];
+        //$id = $row['id'];
+        $mealid = $row['meal_id'];
         $mealName = $row['name'];
-        echo "<a href='detail.php?id=$id'>";
+        echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
         echo "</a>"; 
         echo '</h3></td>';
@@ -144,7 +145,7 @@ Enter a random number to generate the meals. <br>
                            LIMIT 5") as $row) {
         echo '<td><h3>';
         $mealid = $row['meal_id'];
-        $id = $row['id'];
+        // $id = $row['id'];
         $mealName = $row['name'];
         echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
