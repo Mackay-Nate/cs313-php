@@ -5,13 +5,6 @@
 	<h1>Scripture Resources</h1>
 <?php
 	
-
-	/*foreach ($db->query('SELECT * FROM Scriptures') as $row)
-	{
-  		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
-            echo '"' . $row['content'] . '"<br><br>';
-	}*/
-
 	try
 	{
   		$dbUrl = getenv('DATABASE_URL');
@@ -36,7 +29,7 @@
   		die();
 	}
 
-	foreach ($db->query("SELECT * FROM scripture WHERE scripture.book = '$book'") as $row) {
+	foreach ($db->query("SELECT * FROM TestScriptures WHERE book = '$book'") as $row) {
 	}
 
 ?>
@@ -50,7 +43,7 @@
 				echo '<input type="checkbox" name="topic' . $row['id'] . '" value="' . $row['name'] . '" > '. $row['name'] .' <br/>';
 		}
 		?>
-    
-		<br/><input type="submit" value="Search"><br/>
+
+		<br/><input type="submit" value="Submit"><br/>
 	</form>
 </body>
