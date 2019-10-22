@@ -176,7 +176,6 @@ Enter a random number to generate the meals. <br>
 </table>
 </form>
 
-
 <h6>Search for a meal</h6>
 <form method="post" action=''>
 	<span>Search:</span><input type="text" name="search" id="search">
@@ -195,8 +194,10 @@ Enter a random number to generate the meals. <br>
     }
 ?>
 
-  <form method="post" action="insert.php" id="form2" style="width: 500px;">
-  
+<div id="manipulate" style="width:500px;">
+  <h3>Manipulating the list of meals:</h3><br>
+  <input type="button" id="add" value="Add a meal" onclick="show('form2')">
+  <form method="post" action="insert.php" class="hidden" id="form2"> 
     <table>
       <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
       <tr><td>Meal name</td> 
@@ -211,6 +212,14 @@ Enter a random number to generate the meals. <br>
     <input type="checkbox" name="type" value="dinner">Dinner<br>
     <input type="submit">
   </form>
+  <h3></h3>
+  <input type="button" id="edit" value="Edit a meal">
+  <h3></h3>
+  <input type="button" id="delete" value="Delete a meal">
+
+
+</div>
+
 
   <script src="calendar.js"></script>
 
