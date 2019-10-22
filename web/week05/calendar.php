@@ -68,7 +68,7 @@ Enter a random number to generate the meals. <br>
                              FROM ((MenuItem
                              JOIN Meal ON MenuItem.meal_id = Meal.id) 
                              JOIN MealType ON MenuItem.meal_type = MealType.id)
-                             WHERE MenuItem.id = $id
+                             WHERE MenuItem.meal_type = 1
                              ORDER BY RANDOM()
                              LIMIT 5") as $row) {
           $id = $row['id'];
