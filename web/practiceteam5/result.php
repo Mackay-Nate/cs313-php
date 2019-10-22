@@ -73,8 +73,8 @@ foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
  		// get the topics now for this scripture
 	  $stmtTopics = $db->prepare('SELECT name FROM topic t'
 		 . ' INNER JOIN ScriptureToTopics st ON st.topicId = t.id'
-		 . ' WHERE st.scriptureId = :scriptureId');
-	  $stmtTopics->bindValue(':scriptureId', $row['id']);
+		 . ' WHERE st.scripture_id = :scripture_id');
+	  $stmtTopics->bindValue(':scripture_id', $row['id']);
 	  $stmtTopics->execute();
 	 
     while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
