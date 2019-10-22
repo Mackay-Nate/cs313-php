@@ -35,9 +35,12 @@
 ?>
 
 	<form name="insert" action="result.php" method="post">
-		Add Scripture: Book: <input type="text" name="book" /> Chapter: <input type="text" name="chapter" /> Verse: <input type="text" name="verse" /> <br/>
-		Content: <input type="textarea" name="content" />
-		Topic: 
+		Add Scripture: 
+		<br> Book: <input type="text" name="book" /> 
+		<br> Chapter: <input type="text" name="chapter" /> 
+		<br>Verse: <input type="text" name="verse" /> <br/>
+		<br>Content: <input type="textarea" name="content" />
+		<br>Topic: 
 		<?php
 			foreach ($db->query("SELECT * FROM topic") as $row) {
 				echo '<input type="checkbox" name="topic' . $row['id'] . '" value="' . $row['name'] . '" > '. $row['name'] .' <br/>';
