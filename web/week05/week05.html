@@ -84,24 +84,31 @@ Enter a random number to generate the meals. <br>
   <input type="submit" value="Search">
 </form>
 
+<div id="manipulate" style="width:500px;">
+  <h3>Manipulating the list of meals:</h3><br>
+  <input type="button" id="add" value="Add a meal" onclick="show('form2')">
+  <form method="post" action="insert.php" class="hidden" id="form2"> 
+    <table>
+      <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
+      <tr><td>Meal name</td> 
+        <td><input type="text" name="meal_name"></td></tr>
+      <tr><td>What is the cook time?</td>
+        <td><input type="text" name="cook" placeholder="00:00"></td></tr>
+      <tr><td>How long does it take to prepare?</td>
+        <td><input type="text" name="prep" placeholder="00:00"></td></tr>
+    </table>
+    <input type="checkbox" name="type" value="breakfast">Breakfast<br>
+    <input type="checkbox" name="type" value="lunch">Lunch<br>
+    <input type="checkbox" name="type" value="dinner">Dinner<br>
+    <input type="submit">
+  </form>
+  <h3></h3>
+  <input type="button" id="edit" value="Edit a meal">
+  <h3></h3>
+  <input type="button" id="delete" value="Delete a meal">
 
-<form method="post" action="insert.php" id="form2" style="width: 500px;">
-  
-  <table>
-    <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
-    <tr><td>Meal name</td> 
-      <td><input type="text" name="meal_name"></td></tr>
-    <tr><td>What is the cook time?</td>
-      <td><input type="text" name="cook" placeholder="00:00"></td></tr>
-    <tr><td>How long does it take to prepare?</td>
-      <td><input type="text" name="prep" placeholder="00:00"></td></tr>
-  </table>
-  <input type="checkbox" name="type" value="breakfast">Breakfast<br>
-  <input type="checkbox" name="type" value="lunch">Lunch<br>
-  <input type="checkbox" name="type" value="dinner">Dinner<br>
-  <input type="submit">
-</form>
 
+</div>
 
     <script src="calendar.js"></script>
 

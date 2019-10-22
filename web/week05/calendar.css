@@ -4,7 +4,7 @@ body {
   margin: 0px 0px 120px 120px;
 }
 
-#table1, #form2 { 
+#table1, #manipulate { 
   margin: 45px;
   background: lightcyan;
   padding: 15px;
@@ -12,6 +12,10 @@ body {
 
 input { 
   padding: 20x;
+}
+
+.hidden { 
+  display: none;
 }
 
 table tr th { 
