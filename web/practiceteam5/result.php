@@ -58,10 +58,10 @@
 
 foreach ($db->query("SELECT * FROM TestScriptures ") as $row) {
 	echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> <br/>Topics: ";
-	 foreach ($db->query("SELECT *
-	 			FROM topic WHERE topic.id = " . $row['topic_id']) as $topic) {
-	 		echo $topic['name'] . " ";
-	 	}
+	//  foreach ($db->query("SELECT *
+	//  			FROM topic WHERE topic.id = " . $row['id']) as $topic) {
+	//  		echo $topic['name'] . " ";
+	//  	}
 	echo '<br>';
   echo '"' . $row['content'] . '"<br><br>';
 }
