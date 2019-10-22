@@ -57,7 +57,7 @@
   		// Again, first prepare the statement
 	  	$statement = $db->prepare('INSERT INTO ScriptureToTopics(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)');
 		  // Then, bind the values
-  		$statement->bindValue(':scripture_id', $scriptureId);
+  		$statement->bindValue(':scripture_id', $scripture_id);
 	  	$statement->bindValue(':topic_id', $topicId);
 		  $statement->execute();
   	}
