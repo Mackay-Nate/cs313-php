@@ -39,9 +39,9 @@
       $time     = strtotime($prepTime);
       $newformat = date('h:m:s a, $prepTime');
 
-      echo 'prep' + $prepTime + '<br>';
-      echo 'ti' + $time + '<br>';
-      echo 'new' + $newformat + '<br>';
+      echo 'prep' . $prepTime . '<br>';
+      echo 'ti' . $time . '<br>';
+      echo 'new' . $newformat . '<br>';
 
 
       echo $row['name'];
