@@ -38,7 +38,7 @@
       $prepTime = $row['prepTime'];
       
       echo $row['name'];
-      echo ' is a good meal.'
+      echo ' is a good meal.';
       echo $prepTime;
       echo  'It takes ';
       $minutes = $row['prepTime']->format('%m');
