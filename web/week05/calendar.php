@@ -39,7 +39,7 @@
 
 <form>
 Enter a random number to generate the meals. <br>
-<input type="text" style="width: 40px;" id="random" name="random" value="1">
+<input type="text" style="width: 40px;" id="random" name="random" placeholder="1">
 <input type="button" value="Populate calendar" onclick='calendar.php?random="random"'>
 
 <table id="table1">
@@ -209,7 +209,7 @@ Enter a random number to generate the meals. <br>
     </table>
     <?php
 		
-		$statement = $db->prepare('SELECT id, name FROM MealType');
+		$statement = $db->prepare('SELECT id, type FROM MealType');
 		$statement->execute();
 
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
