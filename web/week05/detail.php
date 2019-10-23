@@ -36,9 +36,10 @@
   
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
-      
+      foreach($tdb-query("SELECT $ROW['prepTime'], EXTRACT (MINUTES FROM $ROW['prepTime']") as $minute));
       echo $row['name'];
       echo ' is a good meal.';
+      echo $minutes;
       echo $prepTime;
       echo  'It takes ';
       $minutes = $row['prepTime']->format('%m');

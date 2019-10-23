@@ -45,6 +45,7 @@ Enter a random number to generate the meals. <br>
 <table id="table1">
   <tr>
     <th></th>
+    <th></th>
     <th>Monday</th>
     <th>Tuesday</th>
     <th>Wednesday</th>
