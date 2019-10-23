@@ -36,6 +36,14 @@
   
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
+      $time     = strtotime($prepTime);
+      $newformat=date('i, $time');
+
+      echo 'prep' + $prepTime + '<br>';
+      echo 'ti' + $time + '<br>';
+      echo 'new' + $newformat + '<br>';
+
+      
       echo $row['name'];
       echo ' is a good meal.';
       echo $minutes;
