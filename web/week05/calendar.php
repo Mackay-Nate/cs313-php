@@ -52,7 +52,7 @@ Enter a random number to generate the meals. <br>
     <th>Friday</th>
   </tr>
   <tr>
-    <td>Breakfast</td>
+    <td class="tborder">Breakfast</td>
     <?php 
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
@@ -66,7 +66,7 @@ Enter a random number to generate the meals. <br>
         //$id = $row['id'];
         $mealid =   $row['meal_id'];
         $mealName = $row['name'];
-        echo '<td><h3>';
+        echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
         echo "</a>"; 
@@ -91,7 +91,7 @@ Enter a random number to generate the meals. <br>
     <td>Jen</td>
   </tr>
   <tr>
-    <td>Lunch</td>
+    <td class="tborder">Lunch</td>
     <?php
       $query ="SELECT MenuItem.id, Meal.name, MealType.type
                FROM ((MenuItem
@@ -107,7 +107,7 @@ Enter a random number to generate the meals. <br>
                            WHERE MenuItem.meal_type = 2
                            ORDER BY RANDOM()
                            LIMIT 5") as $row) {
-        echo '<td><h3>';
+        echo '<td class="tborder"><h3>';
         //$id = $row['id'];
         $mealid = $row['meal_id'];
         $mealName = $row['name'];
@@ -127,7 +127,7 @@ Enter a random number to generate the meals. <br>
     <td></td>
   </tr>
   <tr>
-    <td>Dinner</td>
+    <td class="tborder">Dinner</td>
     <?php 
       $query ="SELECT MenuItem.id, Meal.name, MealType.type
                FROM ((MenuItem
@@ -143,7 +143,7 @@ Enter a random number to generate the meals. <br>
                            WHERE MenuItem.meal_type = 4
                            ORDER BY RANDOM()
                            LIMIT 5") as $row) {
-        echo '<td><h3>';
+        echo '<td class="tborder"><h3>';
         $mealid = $row['meal_id'];
         // $id = $row['id'];
         $mealName = $row['name'];

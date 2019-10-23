@@ -19,15 +19,27 @@ input {
 }
 
 table tr th { 
-  min-width: 170px;
+  min-width: 120px;
+  padding: 0 0 20 20px;
+  border-right: solid lightgray 1px;
 }
 
 table tr { 
   height: 30px;
+  text-align: center;
+}
+
+table td { 
+  padding: 0 20px;
+  border-right: solid lightgray 1px;
+}
+
+.tborder { 
+  border-top: solid lightgray 3px;
 }
 
 a { 
-  color: darkblue;
+  color: darkslategrey;
   text-decoration: unset;
 }
 
