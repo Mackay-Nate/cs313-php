@@ -37,7 +37,7 @@
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
       $time     = strtotime($prepTime);
-      $newformat=date('h:i:s a, $time');
+      $newformat = date('h:m:s a, $prepTime');
 
       echo 'prep' + $prepTime + '<br>';
       echo 'ti' + $time + '<br>';
