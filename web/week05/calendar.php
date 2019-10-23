@@ -250,7 +250,7 @@ Enter a random number to generate the meals. <br>
   <form method="post" action='' id=form4 class="hidden">
   <h4>Search:</h4>
   <input type="text" name="search2" id="search2">
-  <input type="submit" value="Search">
+  <input type="button" value="Search">
   <?php
     $mealName = filter_var($_POST["search2"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
