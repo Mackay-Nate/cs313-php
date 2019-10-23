@@ -35,12 +35,12 @@
   $id = htmlspecialchars($_GET["id"]);
   
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
-      $prepTime = $row['prepTime'];
+      $prepTime = $row['cookTime'];
       $time     = strtotime($prepTime);
       $newformat = date('h:m:s a', $prepTime);
-      $newformat1 = date('m', $prepTime);
+      $newformat1 = date('m', $row['cookTime']);
       $newformat2 = date('m:s', $prepTime);
-      $newformat3 = date('h:m', $prepTime);
+      $newformat3 = date('h:i', $prepTime);
 
       echo 'prep' . $prepTime . '<br>';
       echo 'ti' . $time . '<br>';
