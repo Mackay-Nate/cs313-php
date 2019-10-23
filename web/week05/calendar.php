@@ -229,8 +229,9 @@ Enter a random number to generate the meals. <br>
   </form>
   <h3></h3>
   <input type="button" id="edit" value="Edit a meal" onclick="show('form3')">
-  <form method="post" action='' id="form3">
-	<span>Search:</span><input type="text" name="search1" id="search1">
+  <form method="post" action='' id="form3" class="hidden">
+  <h3>Search:</h3>
+  <input type="text" name="search1" id="search1">
   <input type="submit" value="Search">
   <?php
     $mealName = filter_var($_POST["search1"], FILTER_SANITIZE_STRING);
@@ -246,8 +247,9 @@ Enter a random number to generate the meals. <br>
 </form>
   <h3></h3>
   <input type="button" id="delete" value="Delete a meal" onclick="show('form4')">
-  <form method="post" action='' id=form4>
-	<span>Search:</span><input type="text" name="search2" id="search2">
+  <form method="post" action='' id=form4 class="hidden">
+  <h4>Search:</h4>
+  <input type="text" name="search2" id="search2">
   <input type="submit" value="Search">
   <?php
     $mealName = filter_var($_POST["search2"], FILTER_SANITIZE_STRING);
