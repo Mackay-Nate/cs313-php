@@ -148,10 +148,11 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '28');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '29');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '30');
 
-SELECT MenuItem.id, Meal.name, MealType.type
+SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
 FROM ((MenuItem
 JOIN Meal ON MenuItem.meal_id = Meal.id) 
-JOIN MealType ON MenuItem.meal_type = MealType.id
+JOIN MealType ON MenuItem.meal_type = MealType.id)
+WHERE MenuItem.meal_type = 4
 
 ORDER BY RANDOM()
 LIMIT 5

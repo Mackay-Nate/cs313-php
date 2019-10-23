@@ -28,6 +28,7 @@ table tr {
 
 a { 
   color: darkblue;
+  text-decoration: unset;
 }
 
 breakfast { 
