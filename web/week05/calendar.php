@@ -52,7 +52,8 @@ Enter a random number to generate the meals. <br>
     <th>Friday</th>
   </tr>
   <tr>
-    <td class="tborder">Breakfast</td>
+    <td class="tborder" rowspan="3">Breakfast</td>
+    <td class="tborder"></td>
     <?php 
 
       $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
@@ -91,7 +92,8 @@ Enter a random number to generate the meals. <br>
     <td>Jen</td>
   </tr>
   <tr>
-    <td class="tborder">Lunch</td>
+    <td class="tborder" rowspan="2">Lunch</td>
+    <td class="tborder">meal</td>
     <?php
       $query ="SELECT MenuItem.id, Meal.name, MealType.type
                FROM ((MenuItem
@@ -127,7 +129,8 @@ Enter a random number to generate the meals. <br>
     <td></td>
   </tr>
   <tr>
-    <td class="tborder">Dinner</td>
+    <td class="tborder" rowspan="3">Dinner</td>
+    <td class="tborder"></td>
     <?php 
       $query ="SELECT MenuItem.id, Meal.name, MealType.type
                FROM ((MenuItem
