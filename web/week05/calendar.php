@@ -229,7 +229,7 @@ Enter a random number to generate the meals. <br>
   </form>
   <h3></h3>
   <input type="button" id="edit" value="Edit a meal" onclick="show('form3')">
-  <form method="post" action='' id="form3" class="hidden">
+  <form method="post" action='' id="form3" class="hidden" onsubmit="return false">
   <h3>Search:</h3>
   <input type="text" name="search1" id="search1">
   <input type="submit" value="Search">
