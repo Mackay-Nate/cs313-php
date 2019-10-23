@@ -207,9 +207,24 @@ Enter a random number to generate the meals. <br>
       <tr><td>How long does it take to prepare?</td>
         <td><input type="text" name="prep" placeholder="00:00"></td></tr>
     </table>
-    <input type="checkbox" name="type" value="breakfast">Breakfast<br>
+    <?php
+		
+		$statement = $db->prepare('SELECT id, name FROM MealType');
+		$statement->execute();
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+	  {
+  		$id = $row['id'];
+	  	$type = $row['type'];
+
+      echo "<input type='checkbox' name='types[]' id='types$id' value='$id'>";
+  		echo "<label for='types$id'>$type</label><br />";
+		  echo "\n";
+  	}
+		?>
+    <!-- <input type="checkbox" name="type" value="breakfast">Breakfast<br>
     <input type="checkbox" name="type" value="lunch">Lunch<br>
-    <input type="checkbox" name="type" value="dinner">Dinner<br>
+    <input type="checkbox" name="type" value="dinner">Dinner<br> -->
     <input type="submit">
   </form>
   <h3></h3>
