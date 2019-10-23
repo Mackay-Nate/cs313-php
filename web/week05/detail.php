@@ -33,10 +33,14 @@
 
 <?php
   $id = htmlspecialchars($_GET["id"]);
+  
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
+      
       echo $row['name'];
       echo ' is a good meal. It takes ';
+      $minutes = $row['prepTime']->format('%m');
+      echo $minutes;
       echo 'It takes ' . $prepTime . ' minutes to prepare it.';
       echo '<br>';
       echo 'It takes ';

@@ -228,9 +228,39 @@ Enter a random number to generate the meals. <br>
     <input type="submit">
   </form>
   <h3></h3>
-  <input type="button" id="edit" value="Edit a meal">
+  <input type="button" id="edit" value="Edit a meal" onclick="show('form3')">
+  <form method="post" action='' id="form3">
+	<span>Search:</span><input type="text" name="search1" id="search1">
+  <input type="submit" value="Search">
+  <?php
+    $mealName = filter_var($_POST["search1"], FILTER_SANITIZE_STRING);
+    foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
+      $id = $row['id'];
+      echo "<a href='detail.php?id=$id'>";      
+      echo $row['name'];
+      echo '</a>';
+      echo ' Click the meal to edit it.';
+      echo '<br>';
+    }
+  ?>
+</form>
   <h3></h3>
-  <input type="button" id="delete" value="Delete a meal">
+  <input type="button" id="delete" value="Delete a meal" onclick="show('form4')">
+  <form method="post" action='' id=form4>
+	<span>Search:</span><input type="text" name="search2" id="search2">
+  <input type="submit" value="Search">
+  <?php
+    $mealName = filter_var($_POST["search2"], FILTER_SANITIZE_STRING);
+    foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
+      $id = $row['id'];
+      echo "<a href='detail.php?id=$id'>";      
+      echo $row['name'];
+      echo '</a>';
+      echo ' Click the meal to delete it.';
+      echo '<br>';
+    }
+  ?>
+</form>
 
 
 </div>
