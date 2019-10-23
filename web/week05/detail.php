@@ -38,7 +38,7 @@
       $prepTime = $row['cookTime'];
       $time     = strtotime($prepTime);
       $newformat = date('h:m:s a', $prepTime);
-      $newformat1 = date('m', $row['cookTime']);
+      $newformat1 = date('m', strtotime($row['cookTime']));
       $newformat2 = date('m:s', $prepTime);
       $newformat3 = date('h:i', $prepTime);
 
