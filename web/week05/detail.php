@@ -37,11 +37,17 @@
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
       $prepTime = $row['prepTime'];
       $time     = strtotime($prepTime);
-      $newformat = date('h:m:s a, $prepTime');
+      $newformat = date('h:m:s a', $prepTime);
+      $newformat1 = date('m', $prepTime);
+      $newformat2 = date('m:s', $prepTime);
+      $newformat3 = date('h:m', $prepTime);
 
       echo 'prep' . $prepTime . '<br>';
       echo 'ti' . $time . '<br>';
       echo 'new' . $newformat . '<br>';
+      echo 'new1' . $newformat1 . '<br>';
+      echo 'new2' . $newformat2 . '<br>';
+      echo 'new3' . $newformat3 . '<br>';
 
 
       echo $row['name'];
@@ -49,7 +55,6 @@
       echo $minutes;
       echo $prepTime;
       echo  'It takes ';
-      $minutes = $row['prepTime']->format('%m');
       echo $minutes;
       echo 'It takes ' . $prepTime . ' minutes to prepare it.';
       echo '<br>';
