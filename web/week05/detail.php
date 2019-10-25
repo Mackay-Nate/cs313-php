@@ -35,31 +35,14 @@
   $id = htmlspecialchars($_GET["id"]);
   
   foreach ($db->query("SELECT * FROM Meal WHERE id='".$id."'") as $row) {
-      $prepTime = $row['cookTime'];
-      $time     = strtotime($prepTime);
-      $newformat = date('h:m:s a', $prepTime);
-      $newformat1 = date('m', strtotime($row['cookTime']));
-      $newformat2 = date('m:s', $prepTime);
-      $newformat3 = date('h:i', $prepTime);
-
-      echo 'prep' . $prepTime . '<br>';
-      echo 'ti' . $time . '<br>';
-      echo 'new' . $newformat . '<br>';
-      echo 'new1' . $newformat1 . '<br>';
-      echo 'new2' . $newformat2 . '<br>';
-      echo 'new3' . $newformat3 . '<br>';
-
+      $prepTime = $row['prep'];
+      $cookTime = $row['cook'];
 
       echo $row['name'];
       echo ' is a good meal.';
-      echo $minutes;
-      echo $prepTime;
       echo  'It takes ';
-      echo $minutes;
-      echo 'It takes ' . $prepTime . ' minutes to prepare it.';
+      echo $prepTime;
+      echo ' minutes to prepare it, and ' . $cookTime . ' minutes to cook it.';
       echo '<br>';
-      echo 'It takes ';
-      echo MINUTE($prepTime); 
-      echo 'minutes.';
     }
 ?>

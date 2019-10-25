@@ -148,6 +148,7 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '28');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '29');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '30');
 
+/*query for dinner meal order by menuitem id   */
 SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
 FROM ((MenuItem
 JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -156,26 +157,46 @@ WHERE MenuItem.meal_type = 4
 
 ORDER BY MenuItem.id
 LIMIT 5
-);
 
 /* correct an item */
 UPDATE MenuItem 
 SET meal_type = '4', meal_id = '23'
 WHERE id = 40;
 
-
-
-try this
-
-SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
-FROM ((MenuItem
-JOIN Meal ON MenuItem.meal_id = Meal.id) 
-JOIN MealType ON MenuItem.meal_type = MealType.id)
-WHERE MenuItem.meal_type = 4 AND MenuItem.id > ((1 % 21) + 21)
-
-ORDER BY MenuItem.id
-
-
-
+/*switched some meals around*/
 UPDATE MenuItem SET meal_type='4', meal_id=3 Where id=22
+
+ALTER TABLE Meal ADD prep int;
+ALTER TABLE Meal ADD cook int;
+
+UPDATE Meal SET prep=0, cook=10 WHERE id=1;
+UPDATE Meal SET prep=2, cook=10 WHERE id=2;
+UPDATE Meal SET prep=3, cook=15 WHERE id=3;
+UPDATE Meal SET prep=10, cook=35 WHERE id=4;
+UPDATE Meal SET prep=15, cook=15 WHERE id=5;
+UPDATE Meal SET prep=0, cook=0 WHERE id=6;
+UPDATE Meal SET prep=5, cook=10 WHERE id=7;
+UPDATE Meal SET prep=10, cook=15 WHERE id=8;
+UPDATE Meal SET prep=10, cook=20 WHERE id=9;
+UPDATE Meal SET prep=15, cook=10 WHERE id=10;
+UPDATE Meal SET prep=10, cook=20 WHERE id=11;
+UPDATE Meal SET prep=5, cook=35 WHERE id=12;
+UPDATE Meal SET prep=0, cook=4 WHERE id=13;
+UPDATE Meal SET prep=5, cook=0 WHERE id=14;
+UPDATE Meal SET prep=2, cook=0 WHERE id=15;
+UPDATE Meal SET prep=10, cook=15 WHERE id=16;
+UPDATE Meal SET prep=0, cook=4 WHERE id=17;
+UPDATE Meal SET prep=0, cook=1 WHERE id=18;
+UPDATE Meal SET prep=0, cook=2 WHERE id=19;
+UPDATE Meal SET prep=2, cook=0 WHERE id=20;
+UPDATE Meal SET prep=10, cook=45 WHERE id=21;
+UPDATE Meal SET prep=20, cook=240 WHERE id=22;
+UPDATE Meal SET prep=20, cook=40 WHERE id=23;
+UPDATE Meal SET prep=30, cook=480 WHERE id=24;
+UPDATE Meal SET prep=30, cook=180 WHERE id=25;
+UPDATE Meal SET prep=15, cook=180 WHERE id=26;
+UPDATE Meal SET prep=0, cook=15 WHERE id=27;
+UPDATE Meal SET prep=0, cook=15 WHERE id=28;
+UPDATE Meal SET prep=20, cook=180 WHERE id=29;
+UPDATE Meal SET prep=15, cook=15 WHERE id=30;
 
