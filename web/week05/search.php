@@ -39,7 +39,7 @@
       <input type="radio" name="day" value="wednesday">Wednesday<br>
       <input type="radio" name="day" value="thursday">Thursday<br>
       <input type="radio" name="day" value="friday">Friday<br>
-      <input type="button" class="submit" value="Submit" onclick="">
+      <input type="submit" class="submit">
     </form>
 
     <!--view by meal-->
@@ -48,7 +48,7 @@
       <input type="radio" name="meal" value="1">breakfast<br>
       <input type="radio" name="meal" value="2">lunch<br>
       <input type="radio" name="meal" value="4">dinner<br>
-      <input type="button" class="submit" value="Submit" onclick="">
+      <input type="submit" class="submit">
     </form>
 
   </div>
