@@ -139,7 +139,7 @@ INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '19');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '20');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '21');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '22');
-INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '23');  /*mistake corrected*/
+INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '23');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '24');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '25');
 INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '26');
