@@ -23,11 +23,6 @@
     die();
   }
 
-  $meal = $_POST['meal'];
-  echo $meal;
-  $week = date('W');
-  echo "<br>week: " . $week;
-
   switch ($meal) { 
     case "1":
       $mealname = "Breakfast";
@@ -41,9 +36,6 @@
       $mealname = "dinner";
       $query = "(($week % 22) + 22)";
     default: 
-    echo '<br>' . $meal . "<br>";
-    echo $meal_type . "<br>";
-    echo $query . "<br>";
   }
 
 ?>
@@ -53,13 +45,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Dinner Menu</title>
+    <title>Menu by meal</title>
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
 <body onload="document.getElementById('random').focus();">
 
-<h1>Daily menu</h1> 
+<h1>Weekly menu by meal</h1> 
 
 <form>
 
