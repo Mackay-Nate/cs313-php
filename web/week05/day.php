@@ -36,12 +36,15 @@
     case "tuesday":
       $day = "Tuesday";
       $addon = 1;
+      break;
     case "wednesday":
       $day = "Wednesday";
       $addon = 2;
+      break;
     case "thursday":
       $day = "Thursday";
       $addon = 3;
+      break;
     case "friday":
       $day = "Friday";
       $addon = 4;
