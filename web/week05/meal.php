@@ -23,6 +23,7 @@
     die();
   }
 
+  $week = date('W');
   $meal = $_GET['meal'];
   switch ($meal) { 
     case "1":
