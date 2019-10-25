@@ -43,7 +43,10 @@
       $meal = "dinner";
       $meal_type = 4;
       $query = "(($week % 22) + 22)";
-      break;
+    default: 
+    echo $meal . "<br>";
+    echo $meal_type . "<br>";
+    echo $query . "<br>";
   }
 
 ?>
@@ -88,7 +91,7 @@
                            WHERE MenuItem.meal_type = $meal_type AND MenuItem.id > $query 
                            ORDER BY MenuItem.id
                            LIMIT 1") as $row) {
-        $mealid =   $row['meal_id'];
+        $mealid =   $row['Meal.id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
