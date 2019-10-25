@@ -71,7 +71,7 @@
   <tr>
     <th></th>
     <th></th>
-    <th><?php $day ?></th>
+    <th><?php echo $day; ?></th>
   </tr>
   <tr>
     <td class="tborder" rowspan="3">Breakfast</td>
@@ -142,7 +142,7 @@
       FROM ((MenuItem
       JOIN Meal ON MenuItem.meal_id = Meal.id) 
       JOIN MealType ON MenuItem.meal_type = MealType.id)
-      WHERE MenuItem.meal_type = 4 AND MenuItem.id > (($week % 22) + 22 + $addon) 
+      WHERE MenuItem.meal_type = 4 AND MenuItem.id > (($week % 23) + 23 + $addon) 
       ORDER BY MenuItem.id
       LIMIT 1") as $row) {
         echo '<td class="tborder"><h3>';
