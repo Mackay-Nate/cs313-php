@@ -122,6 +122,7 @@
       LIMIT 5") as $row) {
         $mealid = $row['meal_id'];
         $mealName = $row['name'];
+        echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
         echo "</a>"; 
