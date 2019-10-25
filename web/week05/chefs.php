@@ -22,8 +22,6 @@
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
-
-  $week = $_POST['week'];
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +38,16 @@
 <h1>Weekly Dinner menu</h1> 
 
 <form>
-  View meals for this week. <br>
-<!-- <input type="text" style="width: 40px;" id="random" name="random" placeholder="1"> -->
-<input type="button" value="Populate calendar" onclick='week.php?random=<?php$week?>'>
+
+
+
+
+
+
+
+Enter a random number to generate the meals. <br>
+<input type="text" style="width: 40px;" id="random" name="random" placeholder="1">
+<input type="button" value="Populate calendar" onclick='calendar.php?random="random"'>
 
 <table id="table1">
   <tr>
@@ -181,7 +186,6 @@
 
 </table>
 </form>
-
 
 
   <script src="calendar.js"></script>
