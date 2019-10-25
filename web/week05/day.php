@@ -23,7 +23,7 @@
     die();
   }
 
-  $day = $_POST['day'];
+  $day = $_GET['day'];
   echo $day;
   $week = date('W');
   echo "<br>week: " . $week;

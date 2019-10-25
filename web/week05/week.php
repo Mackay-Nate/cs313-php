@@ -23,7 +23,7 @@
     die();
   }
 
-  $week = $_POST['week'];
+  $week = $_GET['week'];
   echo $week;
 ?>
 
@@ -36,13 +36,12 @@
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
-<body onload="document.getElementById('random').focus();">
+<body>
 
 <h1>Weekly Dinner menu</h1> 
 
 <form>
   View meals for this week. <br>
-<!-- <input type="text" style="width: 40px;" id="random" name="random" placeholder="1"> -->
 <input type="button" value="Populate calendar" onclick=''>
 
 <table id="table1">

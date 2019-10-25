@@ -23,6 +23,7 @@
     die();
   }
 
+  $meal = $_GET['meal'];
   switch ($meal) { 
     case "1":
       $mealname = "Breakfast";
@@ -49,7 +50,7 @@
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
-<body onload="document.getElementById('random').focus();">
+<body>
 
 <h1>Weekly menu by meal</h1> 
 

@@ -25,14 +25,14 @@
     </form>
 
     <!--view the entire week options-->
-    <form class="hidden" id="week" method="post" action="week.php">
+    <form class="hidden" id="week" method="get" action="week.php">
       <h4>Select a week</h4>
       <input type="text" placeholder="1-52" name="week"><br>
       <input type="submit" class="submit">
     </form>
 
     <!--by day options-->
-    <form class="hidden" id="day" method="post" action="day.php">
+    <form class="hidden" id="day" method="get" action="day.php">
       <h4>Select a day</h4>
       <input type="radio" name="day" value="monday">Monday<br>
       <input type="radio" name="day" value="tuesday">Tuesday<br>
@@ -43,7 +43,7 @@
     </form>
 
     <!--view by meal-->
-    <form class="hidden" id="meals" method="post" action="meal.php">
+    <form class="hidden" id="meals" method="get" action="meal.php">
       <h4>Select a meal</h4>
       <input type="radio" name="meal" value="1">breakfast<br>
       <input type="radio" name="meal" value="2">lunch<br>
