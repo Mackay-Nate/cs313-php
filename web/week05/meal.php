@@ -29,22 +29,19 @@
   echo "<br>week: " . $week;
 
   switch ($meal) { 
-    case "breakfast":
-      $meal = "Breakfast";
-      $meal_type = '1';
+    case "1":
+      $mealname = "Breakfast";
       $query = "($week % 5)";
       break;
-    case "lunch":
-      $meal = "Lunch";
-      $meal_type = '2';
+    case "2":
+      $mealname = "Lunch";
       $query = "(($week % 4) + 15)";
       break;
-    case "dinner":
-      $meal = "dinner";
-      $meal_type = '4';
+    case "4":
+      $mealname = "dinner";
       $query = "(($week % 22) + 22)";
     default: 
-    echo $meal . "<br>";
+    echo '<br>' . $meal . "<br>";
     echo $meal_type . "<br>";
     echo $query . "<br>";
   }
@@ -80,7 +77,7 @@
     <th>Friday</th>
   </tr>
   <tr>
-    <td class="tborder"><?php echo $meal ?></td>
+    <td class="tborder"><?php echo $mealname ?></td>
     <!--<td class="tborder"></td>-->
     <?php 
 
@@ -88,7 +85,7 @@
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
-                           WHERE MenuItem.meal_type = $meal_type AND MenuItem.id > $query 
+                           WHERE MenuItem.meal_type = $meal AND MenuItem.id > $query 
                            ORDER BY MenuItem.id
                            LIMIT 1") as $row) {
         $mealid =   $row['Meal.id'];
