@@ -154,7 +154,7 @@ JOIN Meal ON MenuItem.meal_id = Meal.id)
 JOIN MealType ON MenuItem.meal_type = MealType.id)
 WHERE MenuItem.meal_type = 4
 
-ORDER BY RANDOM()
+ORDER BY MenuItem.id
 LIMIT 5
 );
 
@@ -162,4 +162,20 @@ LIMIT 5
 UPDATE MenuItem 
 SET meal_type = '4', meal_id = '23'
 WHERE id = 40;
+
+
+
+try this
+
+SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
+FROM ((MenuItem
+JOIN Meal ON MenuItem.meal_id = Meal.id) 
+JOIN MealType ON MenuItem.meal_type = MealType.id)
+WHERE MenuItem.meal_type = 4 AND MenuItem.id > ((1 % 21) + 21)
+
+ORDER BY MenuItem.id
+
+
+
+UPDATE MenuItem SET meal_type='4', meal_id=3 Where id=22
 
