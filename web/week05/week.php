@@ -42,7 +42,7 @@
 <form>
   View meals for this week. <br>
 <!-- <input type="text" style="width: 40px;" id="random" name="random" placeholder="1"> -->
-<input type="button" value="Populate calendar" onclick='week.php?random=<?php$week?>'>
+<input type="button" value="Populate calendar" onclick=''>
 
 <table id="table1">
   <tr>
@@ -59,7 +59,7 @@
     <td class="tborder"></td>
     <?php 
 
-      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      // $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -104,7 +104,7 @@
                JOIN MealType ON MenuItem.meal_type = MealType.id)
                WHERE MenuItem.meal_type = 2;";
 
-      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      // $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
@@ -141,7 +141,7 @@
                JOIN MealType ON MenuItem.meal_type = MealType.id)
                WHERE MenuItem.meal_type = 4;";
 
-      $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
+      // $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id 
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
