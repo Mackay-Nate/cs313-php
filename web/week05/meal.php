@@ -62,13 +62,9 @@
 <h1>Daily menu</h1> 
 
 <form>
- <!-- View meals for this week. <br>
- <input type="text" style="width: 40px;" id="random" name="random" placeholder="1">
- <input type="button" value="Populate calendar" onclick=''> -->
 
 <table id="table1">
   <tr>
-    <th></th>
     <th></th>
     <th>Monday</th>
     <th>Tuesday</th>
@@ -78,7 +74,6 @@
   </tr>
   <tr>
     <td class="tborder"><?php echo $mealname ?></td>
-    <!--<td class="tborder"></td>-->
     <?php 
 
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
@@ -87,7 +82,7 @@
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
                            WHERE MenuItem.meal_type = $meal AND MenuItem.id > $query 
                            ORDER BY MenuItem.id
-                           LIMIT 1") as $row) {
+                           LIMIT 5") as $row) {
         $mealid =   $row['Meal.id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
