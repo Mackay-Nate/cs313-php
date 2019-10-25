@@ -19,8 +19,8 @@
     <!--drop down menu -->
     <form onsubmit="return false;">
       <button value="week" name="options"  type="button" onclick="show('week')">View the whole week</button><br>
-      <button value="day" name="options" type="button" onclick="show('day')">View one day</button><br>
-      <button value="meals" name="options" type="button" onclick="show('meals')">View one meal for the week</button><br>
+      <button value="day" name="options" type="button" onclick="show('day')">View one day this week</button><br>
+      <button value="meals" name="options" type="button" onclick="show('meals')">View one meal for this week</button><br>
       <button value="chef" name="options" onclick="chef.php">List of Chefs</button>
     </form>
 
