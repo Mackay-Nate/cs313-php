@@ -17,7 +17,7 @@
   <div id="options">
     <h3>Please choose how you would like to view your meals</h3>
     <!--drop down menu -->
-    <form action="chef.php">
+    <form action="chefs.php" method="post">
       <button value="week" name="options"  type="button" onclick="show('week')">View the whole week</button><br>
       <button value="day" name="options" type="button" onclick="show('day')">View one day this week</button><br>
       <button value="meals" name="options" type="button" onclick="show('meals')">View one meal for this week</button><br>
