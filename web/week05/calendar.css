@@ -41,7 +41,7 @@ table tr th {
 
 #table1 tr th { 
   padding: 0 0 20 20px;
-  min-width: 120px;
+  min-width: 80px;
   border-right: solid lightgray 1px;
 }
 
