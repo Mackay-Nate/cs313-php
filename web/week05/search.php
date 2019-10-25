@@ -17,11 +17,11 @@
   <div id="options">
     <h3>Please choose how you would like to view your meals</h3>
     <!--drop down menu -->
-    <form onsubmit="return false;">
+    <form action="chef.php">
       <button value="week" name="options"  type="button" onclick="show('week')">View the whole week</button><br>
       <button value="day" name="options" type="button" onclick="show('day')">View one day this week</button><br>
       <button value="meals" name="options" type="button" onclick="show('meals')">View one meal for this week</button><br>
-      <button value="chef" name="options" onclick="chef.php">List of Chefs</button>
+      <button type="submit" value="chef" name="options" onclick="chef.php">List of Chefs</button>
     </form>
 
     <!--view the entire week options-->
