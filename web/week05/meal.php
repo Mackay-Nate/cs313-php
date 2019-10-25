@@ -31,17 +31,17 @@
   switch ($meal) { 
     case "breakfast":
       $meal = "Breakfast";
-      $meal_type = 1;
+      $meal_type = '1';
       $query = "($week % 5)";
       break;
     case "lunch":
       $meal = "Lunch";
-      $meal_type = 2;
+      $meal_type = '2';
       $query = "(($week % 4) + 15)";
       break;
     case "dinner":
       $meal = "dinner";
-      $meal_type = 4;
+      $meal_type = '4';
       $query = "(($week % 22) + 22)";
     default: 
     echo $meal . "<br>";
