@@ -75,7 +75,7 @@
                            WHERE MenuItem.meal_type = $meal AND MenuItem.id > $query 
                            ORDER BY MenuItem.id
                            LIMIT 5") as $row) {
-        $mealid =   $row['Meal.id'];
+        $mealid =   $row['id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";

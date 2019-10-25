@@ -63,9 +63,9 @@
         <tr><td>Meal name</td> 
           <td><input type="text" name="meal_name"></td></tr>
         <tr><td>What is the cook time?</td>
-          <td><input type="text" name="cook" placeholder="00:00"></td></tr>
+          <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
         <tr><td>How long does it take to prepare?</td>
-          <td><input type="text" name="prep" placeholder="00:00"></td></tr>
+          <td><input type="text" name="prep" placeholder="in minutes"></td></tr>
         <tr><td colspan="2">
           <?php 
 

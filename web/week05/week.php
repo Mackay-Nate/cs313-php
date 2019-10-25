@@ -77,7 +77,7 @@
                            WHERE MenuItem.meal_type = 1 AND MenuItem.id > ($week % 5) 
                            ORDER BY MenuItem.id
                            LIMIT 5") as $row) {
-        $mealid =   $row['Meal.id'];
+        $mealid =   $row['id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
@@ -149,7 +149,7 @@
       ORDER BY MenuItem.id
       LIMIT 5") as $row) {
         echo '<td class="tborder"><h3>';
-        $mealid = $row['meal_id'];
+        $mealid = $row['id'];
         $mealName = $row['name'];
         echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;

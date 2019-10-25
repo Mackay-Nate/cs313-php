@@ -88,7 +88,7 @@
                            WHERE MenuItem.meal_type = 1 AND MenuItem.id > (($week % 5) + $addon) 
                            ORDER BY MenuItem.id
                            LIMIT 1") as $row) {
-        $mealid =   $row['meal_id'];
+        $mealid =   $row['id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
@@ -123,7 +123,7 @@
       WHERE MenuItem.meal_type = 2 AND MenuItem.id > (($week % 4) + 15 + $addon)     
       ORDER BY MenuItem.id
       LIMIT 1") as $row) {
-        $mealid = $row['meal_id'];
+        $mealid = $row['id'];
         $mealName = $row['name'];
         echo '<td class="tborder"><h3>';
         echo "<a href='detail.php?id=$mealid'>";
@@ -149,7 +149,7 @@
       ORDER BY MenuItem.id
       LIMIT 1") as $row) {
         echo '<td class="tborder"><h3>';
-        $mealid = $row['meal_id'];
+        $mealid = $row['id'];
         $mealName = $row['name'];
         echo "<a href='detail.php?id=$mealid'>";
         echo $mealName;
