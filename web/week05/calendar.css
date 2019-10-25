@@ -5,13 +5,30 @@ body {
 }
 
 #table1, #manipulate { 
-  margin: 45px;
+  margin: 45px 5px;
   background: lightcyan;
   padding: 15px;
 }
 
+#manipulate, #options { 
+  margin: 45px 5px;
+  background: lightcyan;
+  padding: 15px;
+  width: 600px;
+}
+
+button { 
+  padding: 5px;
+  margin:  10px;
+  width:   145px;
+}
+
 input { 
-  padding: 20x;
+  padding: 3px;
+}
+
+.submit { 
+  margin-top: 10px;
 }
 
 .hidden { 
@@ -19,9 +36,11 @@ input {
 }
 
 table tr th { 
-  min-width: 120px;
   padding: 0 0 20 20px;
-  border-right: solid lightgray 1px;
+  #table1 {
+    min-width: 120px;
+    border-right: solid lightgray 1px;
+  }
 }
 
 table tr { 
@@ -31,7 +50,9 @@ table tr {
 
 table td { 
   padding: 0 20px;
-  border-right: solid lightgray 1px;
+  #table1 {
+    border-right: solid lightgray 1px;
+  }
 }
 
 .tborder { 
