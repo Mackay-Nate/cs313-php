@@ -34,11 +34,12 @@
   $stmt->bindValue(':cook', $cook, PDO::PARAM_INT);
   $stmt->execute();
 
-  header("Location: search.php");
-  die();
 ?>
 
-You meal has been added to the database. 
-<?php echo meal_id_seq; ?>
+<form action="search.php">
+  Your meal has been added to the database. 
+  <?php echo meal_id_seq; ?>
 
-<input type="button" value="Return">
+  <input type="button" value="Return">
+
+</form>
