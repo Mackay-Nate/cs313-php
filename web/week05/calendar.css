@@ -37,22 +37,26 @@ input {
 
 table tr th { 
   padding: 0 0 20 20px;
-  #table1 {
-    min-width: 120px;
-    border-right: solid lightgray 1px;
-  }
+}
+
+#table1 tr th { 
+  padding: 0 0 20 20px;
+  min-width: 120px;
+  border-right: solid lightgray 1px;
+}
+
+#table1 td { 
+  padding: 0 20px;
+  border-right: solid lightgray 1px;
+}
+
+table td { 
+  padding: 0 20px;
 }
 
 table tr { 
   height: 30px;
   text-align: center;
-}
-
-table td { 
-  padding: 0 20px;
-  #table1 {
-    border-right: solid lightgray 1px;
-  }
 }
 
 .tborder { 
