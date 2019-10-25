@@ -25,7 +25,8 @@
 
   $day = $_POST['day'];
   echo $day;
-
+  $week = date('W');
+  echo "<br>week: " . $week;
 
 
 ?>
