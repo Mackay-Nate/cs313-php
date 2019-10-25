@@ -24,6 +24,7 @@
   }
 
   $week = $_POST['week'];
+  echo $week;
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +74,7 @@
                            FROM ((MenuItem
                            JOIN Meal ON MenuItem.meal_id = Meal.id) 
                            JOIN MealType ON MenuItem.meal_type = MealType.id)
-                           WHERE MenuItem.meal_type = 1 AND MenuItem.id > (($week % 21) + 22) 
+                           WHERE MenuItem.meal_type = 1 AND MenuItem.id > ($week % 1) 
                            ORDER BY MenuItem.id
                            LIMIT 5") as $row) {
         $mealid =   $row['meal_id'];
@@ -116,7 +117,7 @@
       FROM ((MenuItem
       JOIN Meal ON MenuItem.meal_id = Meal.id) 
       JOIN MealType ON MenuItem.meal_type = MealType.id)
-      WHERE MenuItem.meal_type = 2 AND MenuItem.id > (($week % 21) + 22) 
+      WHERE MenuItem.meal_type = 2 AND MenuItem.id > (($week % 8) + 12) 
       ORDER BY MenuItem.id
       LIMIT 5") as $row) {
         $mealid = $row['meal_id'];
@@ -144,7 +145,7 @@
       FROM ((MenuItem
       JOIN Meal ON MenuItem.meal_id = Meal.id) 
       JOIN MealType ON MenuItem.meal_type = MealType.id)
-      WHERE MenuItem.meal_type = 1 AND MenuItem.id > (($week % 21) + 22) 
+      WHERE MenuItem.meal_type = 4 AND MenuItem.id > (($week % 22) + 22) 
       ORDER BY MenuItem.id
       LIMIT 5") as $row) {
         echo '<td class="tborder"><h3>';
