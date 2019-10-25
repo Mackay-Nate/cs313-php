@@ -57,7 +57,7 @@
     <h3>Manipulating the list of meals:</h3>
     <!--3 buttons to choose from-->
     <button type="button" id="add" value="Add a meal" onclick="show('form2')">Add a meal</button><br>
-    <form method="post" action="insert.php" class="hidden" id="form2">
+    <form method="post" action="add.php" class="hidden" id="form2">
       <table id="add">
         <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
         <tr><td>Meal name</td> 
@@ -73,7 +73,7 @@
           <input type="checkbox" name="type" value="breakfast">Breakfast
           <input type="checkbox" name="type" value="lunch">Lunch
           <input type="checkbox" name="type" value="dinner">Dinner</td></tr>
-        <tr><td></td><td><input type="submit"></td></tr>
+        <tr><td></td><td><input type="submit" value="Add to database"></td></tr>
       </table>
     </form>
     

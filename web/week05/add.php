@@ -3,6 +3,10 @@
   $prep = htmlspecialchars($_POST['prep']);
   $cook = htmlspecialchars($_POST['cook']);
 
+  echo "$name\n";
+  echo "$prep\n";
+  echo "$cook\n";
+
 
 ?> 
 
@@ -10,5 +14,5 @@
 alert('Your meal has been added.');
 
 
-header("Location: calendar.php");
+header("Location: search.php");
 
