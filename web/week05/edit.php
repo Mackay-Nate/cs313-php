@@ -18,7 +18,8 @@
 
 <body>
 
-<form method="post" action='edit.php'>
+<h1> Type in the name of the meal you'd like to edit </h1>
+<form method="post" action='edit.php?name=<?php echo search; ?>'>
 	<span>Search:</span><input type="text" name="search" id="search">
   <input type="submit" value="Search">
 </form>
