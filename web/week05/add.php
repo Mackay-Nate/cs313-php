@@ -27,16 +27,27 @@
     die();
   }
 
+  $typeIds = $_POST['type'];
   //INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '23');
-  $stmt = $db->prepare('INSERT INTO Meal (name, prep, cook) VALUES (:name ,:prep, :cook)');
-  $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-  $stmt->bindValue(':prep', $prep, PDO::PARAM_INT);
-  $stmt->bindValue(':cook', $cook, PDO::PARAM_INT);
-  $stmt->execute();
+  $statement = $db->prepare('INSERT INTO Meal (name, prep, cook) VALUES (:name ,:prep, :cook)');
+  $statement->bindValue(':name', $name, PDO::PARAM_STR);
+  $statement->bindValue(':prep', $prep, PDO::PARAM_INT);
+  $statement->bindValue(':cook', $cook, PDO::PARAM_INT);
+  $statement->execute();
+
+  $id = $db->lastInsertId("meal_id_seq");
+  echo "id is " . $id . '<br>';
+
+  foreach ($typeIds as $typeId) {
+    $statement = $db->prepare('INSERT INTO MenuItem (meal_type, meal_id) VALUES (:mealtype, :id)');
+    $statement->bindValue(':mealtype', $typeId, PDO::PARAM_INT);
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+  }
 
 ?>
 
-<form action="search.php">
+<form action="search.php" method="post">
   Your meal has been added to the database. 
   <?php echo meal_id_seq; ?>
 

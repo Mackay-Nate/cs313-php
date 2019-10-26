@@ -70,9 +70,9 @@
           <?php 
 
           ?>
-          <input type="checkbox" name="type" value="breakfast">Breakfast
-          <input type="checkbox" name="type" value="lunch">Lunch
-          <input type="checkbox" name="type" value="dinner">Dinner</td></tr>
+          <input type="checkbox" name="type[]" id="breakfast" value="1"><label for='breakfast'>Breakfast</label>
+          <input type="checkbox" name="type[]" id="lunch" value="2">Lunch
+          <input type="checkbox" name="type[]" id="dinner" value="4">Dinner</td></tr>
         <tr><td></td><td><input type="submit" value="Add to database"></td></tr>
       </table>
     </form>
