@@ -78,6 +78,7 @@
     </form>
     
     <form action="edit.php" method="post">
+      <input type="text" name="search">
       <button type="submit" id="edit" value="Edit a meal">Edit a meal</button><br>
     <?php
     
@@ -90,7 +91,7 @@
 
     ?>
     </form>
-    
+
     </div>
     
   <script src="calendar.js"></script>

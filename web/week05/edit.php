@@ -21,7 +21,7 @@
 <h2> Type in the name of the meal you'd like to edit </h2>
 <form method="post" action=''>
 	<span>Search:</span><input type="text" name="search" id="search" value="Oatmeal">
-  <input type="submit" value="Search">
+  <input type="submit" value="Search" >
 </form>
 
 <?php
