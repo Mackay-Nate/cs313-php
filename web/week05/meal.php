@@ -28,11 +28,11 @@
   switch ($meal) { 
     case "1":
       $mealname = "Breakfast";
-      $query = "(($week * 3) % 5)";
+      $query = "(($week * 2) % 5)";
       break;
     case "2":
       $mealname = "Lunch";
-      $query = "((($week * 3) % 4) + 15)";
+      $query = "((($week * 2) % 4) + 15)";
       break;
     case "4":
       $mealname = "dinner";
