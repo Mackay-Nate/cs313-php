@@ -77,17 +77,19 @@
       </table>
     </form>
     
-    <form action="" method="post">
-    <button type="submit" id="edit" value="Edit a meal">Edit a meal</button><br>
+    <form action="edit.php" method="post">
+      <button type="submit" id="edit" value="Edit a meal">Edit a meal</button><br>
     <?php
     
     ?>
     </form>
 
-    <button type="button" id="delete" value="Delete a meal">Delete a meal</button><br>
+    <form action="delete.php" method="post">
+      <button type="submit" id="delete" value="Delete a meal">Delete a meal</button><br>
     <?php
 
     ?>
+    </form>
     
     </div>
     
