@@ -28,7 +28,7 @@
   }
 
   $typeIds = $_POST['type'];
-  //INSERT INTO MenuItem (meal_type, meal_id) VALUES ('4', '23');
+  
   $statement = $db->prepare('INSERT INTO Meal (name, prep, cook) VALUES (:name ,:prep, :cook)');
   $statement->bindValue(':name', $name, PDO::PARAM_STR);
   $statement->bindValue(':prep', $prep, PDO::PARAM_INT);
@@ -48,10 +48,25 @@
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <script src="calendar.js"></script>
+    <link rel="stylesheet" type="text/css" href="calendar.css">   
+  </head>
+
+<body>
+
 <form action="search.php" method="post">
-  Your meal has been added to the database. 
+  <h1>Your meal has been added to the database. </h1>
   <?php echo meal_id_seq; ?>
 
   <input type="submit" value="Return">
 
 </form>
+
+</body>
+</html>
