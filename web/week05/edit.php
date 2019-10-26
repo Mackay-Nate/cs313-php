@@ -18,8 +18,8 @@
 
 <body>
 
-<h1> Type in the name of the meal you'd like to edit </h1>
-<form method="post" action='edit.php?name=<?php echo search; ?>'>
+<h2> Type in the name of the meal you'd like to edit </h2>
+<form method="post" action=''>
 	<span>Search:</span><input type="text" name="search" id="search">
   <input type="submit" value="Search">
 </form>
@@ -28,9 +28,9 @@
     $mealName = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
       $id = $row['id'];
-      echo "<h2><a href='detail.php?id=$id'>";      
+      echo "<h3><a href='detail.php?id=$id'>";
       echo $row['name'];
-      echo '</a></h2>';
+      echo '</a></h3>';
       echo '<br>';
     }
 ?>
