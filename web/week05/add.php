@@ -39,6 +39,7 @@
   echo "id is " . $id . '<br>';
 
   foreach ($typeIds as $typeId) {
+    echo 'This is a foreach statement';
     $statement = $db->prepare('INSERT INTO MenuItem (meal_type, meal_id) VALUES (:mealtype, :id)');
     $statement->bindValue(':mealtype', $typeId, PDO::PARAM_INT);
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
@@ -51,6 +52,6 @@
   Your meal has been added to the database. 
   <?php echo meal_id_seq; ?>
 
-  <input type="button" value="Return">
+  <input type="submit" value="Return">
 
 </form>

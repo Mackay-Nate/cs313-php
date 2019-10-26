@@ -19,6 +19,8 @@ CREATE TABLE Meal (
   prepTime    time, 
   cookTime    time, 
   frequency   int, 
+  prep        int, 
+  cook        int
   --ingredients REFERENCES ingredient(id)
 );
 
