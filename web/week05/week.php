@@ -24,6 +24,9 @@
   }
 
   $week = $_GET['week'];
+  if ($week == "") { 
+    $week = date('W'); 
+  }
   echo $week;
 ?>
 
@@ -40,9 +43,8 @@
 
 <h1>Weekly Dinner menu</h1> 
 
-<form>
-  View meals for this week. <br>
-<input type="button" value="Populate calendar" onclick=''>
+<form action="week.php">
+<input type="submit" value="Populate calendar for this week">
 
 <table id="table1">
   <tr>
@@ -58,16 +60,6 @@
     <td class="tborder" rowspan="3">Breakfast</td>
     <td class="tborder"></td>
     <?php 
-
-      // $number = filter_var($_POST["random"], FILTER_SANITIZE_STRING);
-      // foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, MenuItem.meal_id
-      //                      FROM ((MenuItem
-      //                      JOIN Meal ON MenuItem.meal_id = Meal.id) 
-      //                      JOIN MealType ON MenuItem.meal_type = MealType.id)
-      //                      WHERE MenuItem.meal_type = 1
-      //                      ORDER BY RANDOM()
-      //                      LIMIT 5") as $row) {
-        //$id = $row['id'];
 
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
                            FROM ((MenuItem
