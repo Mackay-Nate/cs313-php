@@ -44,7 +44,7 @@
 
 <h2> Type in the name of the meal you'd like to edit </h2>
 <form method="post" action=''>
-	<span>Search:</span><input type="text" name="search" id="search" value="Oatmeal">
+	<span>Meal name:</span><input type="text" name="search" id="search" value="Oatmeal">
   <input type="submit" value="Search" >
 </form>
 
@@ -61,20 +61,19 @@
       echo  $row['name'] . ' takes ';
       echo $row['prep'];
       echo ' minutes to prepare it, and ' . $row['cook'] . ' minutes to cook it.' . '<br>';
-      echo $row['name'] . 'is a good meal for:' . '<br>';
+      echo $row['name'] . ' is a good meal for:' . '<br>';
       
-
+      //display meal type
       $stmtMeals = $db->prepare('SELECT type FROM MealType t'
       . ' INNER JOIN MenuItem mi ON mi.meal_type = t.id'
       . ' WHERE mi.meal_id = :meal_id');
-     $stmtMeals->bindValue(':meal_id', $row['id']);
-     $stmtMeals->execute();
+      $stmtMeals->bindValue(':meal_id', $row['id']);
+      $stmtMeals->execute();
     
-     while ($topicRow = $stmtMeals->fetch(PDO::FETCH_ASSOC))
-     {
-       echo $topicRow['type'] . ' ';
-     }
-
+      while ($topicRow = $stmtMeals->fetch(PDO::FETCH_ASSOC))
+      {
+        echo $topicRow['type'] . '<br>';
+      }
 
       
       echo '<h3>What would you like to change?<h3>';
@@ -82,7 +81,7 @@
       echo '<form method="post" action="add.php" id="form2">
       <table id="add">
         <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
-        
+        <tr><td>Cook time?</td>
           <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
         <tr><td>Preparation time?</td>
           <td><input type="text" name="prep" placeholder="in minutes"></td></tr>

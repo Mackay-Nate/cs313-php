@@ -78,7 +78,7 @@
     </form>
     
     <form action="edit.php" method="post">
-      <button type="submit" id="edit" value="Edit a meal">Edit a meal</button><br>
+      <button type="submit" id="edit" value="Edit a meal" onclick="success()">Edit a meal</button><br>
     <?php
     
     ?>
