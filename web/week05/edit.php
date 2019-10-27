@@ -79,23 +79,24 @@
       echo '<h3>What would you like to change?<h3>';
 
       echo '<form method="post" action="add.php" id="form2">
-      <table id="add">
-        <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
-        <tr><td>Cook time?</td>
-          <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
-        <tr><td>Preparation time?</td>
-          <td><input type="text" name="prep" placeholder="in minutes"></td></tr>
-        <tr><td colspan="2">
-          <?php 
-
-          ?>
-          <input type="checkbox" name="type[]" id="breakfast" value="1"><label for="breakfast">Breakfast</label>
-          <input type="checkbox" name="type[]" id="lunch" value="2">Lunch
-          <input type="checkbox" name="type[]" id="dinner" value="4">Dinner</td></tr>
-        <tr><td><input type="button" value="Back" onclick="search.php"></td><td><input type="submit" value="Edit the database"></td></tr>
-      </table>
-    </form>';
-
+              <table id="add">
+                <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
+                <tr><td>Cook time?</td>
+                  <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
+                <tr><td>Preparation time?</td>
+                  <td><input type="text" name="prep" placeholder="in minutes"></td></tr>
+                <tr><td colspan="2">
+                <input type="checkbox" name="type[]" id="breakfast" value="1"><label for="breakfast">Breakfast</label>
+                <input type="checkbox" name="type[]" id="lunch" value="2">Lunch
+                <input type="checkbox" name="type[]" id="dinner" value="4">Dinner</td></tr>
+ 
+                <tr><td colspan="2"><input type="submit" value="Edit the database" onclick="success()"></td></tr>
+              </table>
+            </form>';
+      echo '<form method="post" action="search.php">
+              <h3>Cancel editing</h3>
+              <input type="submit" value="Cancel" >
+            </form>';
     }
 ?>
 
