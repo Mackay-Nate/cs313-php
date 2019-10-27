@@ -62,9 +62,9 @@
       echo $row['prep'];
       echo ' minutes to prepare it, and ' . $row['cook'] . ' minutes to cook it.';
       echo '<br>';
-      echo 'What would you like to change?'
+      echo 'What would you like to change?';
 
-      
+
     }
 ?>
 
