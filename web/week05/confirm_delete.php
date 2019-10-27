@@ -1,8 +1,6 @@
 <?php 
   $name = htmlspecialchars($_POST['meal']);
   $id   = (int)htmlspecialchars($_POST['id']);
-  $prep = htmlspecialchars($_POST['prep']);
-  $cook = htmlspecialchars($_POST['cook']);
 
   session_start();
 
@@ -28,20 +26,17 @@
     die();
   }
 
-  $typeIds = $_POST['type'];
+  $typeIds = $_POST['id'];
   
-  $statement = $db->prepare('UPDATE Meal SET prep=:prep, cook=:cook WHERE id=:id');
-  $statement->bindValue(':id', $id, PDO::PARAM_INT);
-  $statement->bindValue(':prep', $prep, PDO::PARAM_INT);
-  $statement->bindValue(':cook', $cook, PDO::PARAM_INT);
-  $statement->execute();  
-
   foreach ($typeIds as $typeId) {
-    $statement = $db->prepare('UPDATE MenuItem SET meal_type=:mealtype WHERE meal_id=:id');
-    $statement->bindValue(':mealtype', $typeId, PDO::PARAM_INT);
+    $statement = $db->prepare('DELETE FROM MenuItem WHERE meal_id=:id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->execute();
   }
+
+  $statement = $db->prepare('DELETE FROM Meal WHERE id=:id');
+  $statement->bindValue(':id', $id, PDO::PARAM_INT);
+  $statement->execute();  
 
   header("Location: search.php");
 ?>

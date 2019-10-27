@@ -6,3 +6,7 @@ function show(item) {
 function success() { 
   alert("Your edit was successful.")
 }
+
+function successDelete() { 
+  alert("Your meal was deleted.")
+}
