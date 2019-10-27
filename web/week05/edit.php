@@ -52,16 +52,16 @@
     $mealName = filter_var($_POST["search"], FILTER_SANITIZE_STRING);
     foreach ($db->query("SELECT * FROM Meal WHERE name='$mealName' ") as $row) {
       $id = $row['id'];
-
+      $name = $row['name'];
       echo "<h3><a href='detail.php?id=$id'>";
-      echo $row['name'];
+      echo $name;
       echo '</a></h3>';
       echo '<br>'; 
 
-      echo  $row['name'] . ' takes ';
+      echo $name . ' takes ';
       echo $row['prep'];
       echo ' minutes to prepare it, and ' . $row['cook'] . ' minutes to cook it.' . '<br>';
-      echo $row['name'] . ' is a good meal for:' . '<br>';
+      echo $name . ' is a good meal for:' . '<br>';
       
       //display meal type
       $stmtMeals = $db->prepare('SELECT type FROM MealType t'
@@ -75,11 +75,12 @@
         echo $topicRow['type'] . '<br>';
       }
 
-      
       echo '<h3>What would you like to change?<h3>';
 
       echo '<form method="post" action="add.php" id="form2">
-              <table id="add">
+              <table id="edit">
+                <input type="hidden" name="id" value="$id">
+                <input type="hidden" name="meal" value="$name";
                 <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
                 <tr><td>Cook time?</td>
                   <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
