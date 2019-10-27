@@ -60,18 +60,23 @@
 
       echo  $row['name'] . ' takes ';
       echo $row['prep'];
-      echo ' minutes to prepare it, and ' . $row['cook'] . ' minutes to cook it.';
-      echo '<br>';
+      echo ' minutes to prepare it, and ' . $row['cook'] . ' minutes to cook it.' . '<br>';
+      echo $row['name'] . 'is a good meal for:' . '<br>';
+      
+
+
+      
+      
       echo '<h3>What would you like to change?<h3>';
 
-      echo '<form method="post" action="add.php" class="hidden" id="form2">
+      echo '<form method="post" action="add.php" id="form2">
       <table id="add">
-        <tr><th colspan="2"><h3>Adding a meal</h3></th></tr>
+        <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
         <tr><td>Meal name</td> 
           <td><input type="text" name="meal_name"></td></tr>
-        <tr><td>What is the cook time?</td>
+        <tr><td>Cook time?</td>
           <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
-        <tr><td>How long does it take to prepare?</td>
+        <tr><td>Preparation time?</td>
           <td><input type="text" name="prep" placeholder="in minutes"></td></tr>
         <tr><td colspan="2">
           <?php 
