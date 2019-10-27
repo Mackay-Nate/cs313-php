@@ -64,17 +64,25 @@
       echo $row['name'] . 'is a good meal for:' . '<br>';
       
 
+      $stmtMeals = $db->prepare('SELECT type FROM MealType t'
+      . ' INNER JOIN MenuItem mi ON mi.meal_type = t.id'
+      . ' WHERE mi.meal_id = :meal_id');
+     $stmtMeals->bindValue(':meal_id', $row['id']);
+     $stmtMeals->execute();
+    
+     while ($topicRow = $stmtMeals->fetch(PDO::FETCH_ASSOC))
+     {
+       echo $topicRow['type'] . ' ';
+     }
 
-      
+
       
       echo '<h3>What would you like to change?<h3>';
 
       echo '<form method="post" action="add.php" id="form2">
       <table id="add">
         <tr><th colspan="2"><h3>Edit a meal</h3></th></tr>
-        <tr><td>Meal name</td> 
-          <td><input type="text" name="meal_name"></td></tr>
-        <tr><td>Cook time?</td>
+        
           <td><input type="text" name="cook" placeholder="in minutes"></td></tr>
         <tr><td>Preparation time?</td>
           <td><input type="text" name="prep" placeholder="in minutes"></td></tr>
@@ -85,7 +93,7 @@
           <input type="checkbox" name="type[]" id="breakfast" value="1"><label for="breakfast">Breakfast</label>
           <input type="checkbox" name="type[]" id="lunch" value="2">Lunch
           <input type="checkbox" name="type[]" id="dinner" value="4">Dinner</td></tr>
-        <tr><td></td><td><input type="submit" value="Add to database"></td></tr>
+        <tr><td><input type="button" value="Back" onclick="search.php"></td><td><input type="submit" value="Edit the database"></td></tr>
       </table>
     </form>';
 
