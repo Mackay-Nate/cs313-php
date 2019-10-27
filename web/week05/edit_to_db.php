@@ -1,6 +1,6 @@
 <?php 
   $name = htmlspecialchars($_POST['meal']);
-  $id   = htmlspecialchars($_POST['id']);
+  $id   = (int)htmlspecialchars($_POST['id']);
   $prep = htmlspecialchars($_POST['prep']);
   $cook = htmlspecialchars($_POST['cook']);
 
@@ -34,7 +34,7 @@
   $statement->bindValue(':id', $id, PDO::PARAM_INT);
   $statement->bindValue(':prep', $prep, PDO::PARAM_INT);
   $statement->bindValue(':cook', $cook, PDO::PARAM_INT);
-  $statement->execute();
+  $statement->execute();  
 
   // $id = $db->lastInsertId("meal_id_seq");
   // echo "id is " . $id . '<br>';
