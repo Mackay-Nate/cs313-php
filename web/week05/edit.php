@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
-<body onload='document.getElementById("search").onfocus()'>
+<body onload='document.getElementById("search").focus()'>
 
 <h2> Type in the name of the meal you'd like to edit </h2>
 <form method="post" action=''>
