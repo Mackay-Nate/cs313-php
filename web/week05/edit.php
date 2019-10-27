@@ -77,7 +77,7 @@
 
       echo '<h3>What would you like to change?<h3>';
 
-      echo '<form method="post" action="add.php" id="form2">
+      echo '<form method="post" action="edit_to_db.php" id="form2">
               <table id="edit">
                 <input type="hidden" name="id" value="$id">
                 <input type="hidden" name="meal" value="$name";
