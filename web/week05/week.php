@@ -27,7 +27,7 @@
   if ($week == "") { 
     $week = date('W'); 
   }
-  echo $week;
+  
 ?>
 
 <!DOCTYPE html>

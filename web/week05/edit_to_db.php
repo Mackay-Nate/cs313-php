@@ -31,7 +31,7 @@
   $typeIds = $_POST['type'];
   
   $statement = $db->prepare('UPDATE Meal SET prep=:prep, cook=:cook WHERE id=:id');
-  $statement->bindValue(':id'  , $id  , PDO::PARAM_STR);
+  $statement->bindValue(':id', $id, PDO::PARAM_INT);
   $statement->bindValue(':prep', $prep, PDO::PARAM_INT);
   $statement->bindValue(':cook', $cook, PDO::PARAM_INT);
   $statement->execute();
@@ -41,7 +41,7 @@
 
   foreach ($typeIds as $typeId) {
     // echo 'This is a foreach statement';
-    $statement = $db->prepare('UPDATE MenuItem SET meal_type=:mealtype WHERE id=:id');
+    $statement = $db->prepare('UPDATE MenuItem SET meal_type=:mealtype WHERE meal_id=:id');
     $statement->bindValue(':mealtype', $typeId, PDO::PARAM_INT);
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->execute();

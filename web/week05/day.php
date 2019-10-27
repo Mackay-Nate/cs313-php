@@ -24,9 +24,7 @@
   }
 
   $day = $_GET['day'];
-  echo $day;
   $week = date('W');
-  echo "<br>week: " . $week;
 
   switch ($day) { 
     case "monday":

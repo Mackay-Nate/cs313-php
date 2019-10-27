@@ -36,10 +36,8 @@
   $statement->execute();
 
   $id = $db->lastInsertId("meal_id_seq");
-  echo "id is " . $id . '<br>';
 
   foreach ($typeIds as $typeId) {
-    echo 'This is a foreach statement';
     $statement = $db->prepare('INSERT INTO MenuItem (meal_type, meal_id) VALUES (:mealtype, :id)');
     $statement->bindValue(':mealtype', $typeId, PDO::PARAM_INT);
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
@@ -62,7 +60,6 @@
 
 <form action="search.php" method="post">
   <h1>Your meal has been added to the database. </h1>
-  <?php echo meal_id_seq; ?>
 
   <input type="submit" value="Return">
 

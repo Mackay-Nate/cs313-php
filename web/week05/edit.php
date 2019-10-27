@@ -24,9 +24,6 @@
   }
 
   $id = htmlspecialchars($_POST['search']);
-  $prep = htmlspecialchars($_POST['']);
-  $cook = htmlspecialchars($_POST['']);
-
 
 ?> 
 
@@ -40,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="calendar.css">   
   </head>
 
-<body>
+<body onload='document.getElementById("search").onfocus()'>
 
 <h2> Type in the name of the meal you'd like to edit </h2>
 <form method="post" action=''>
