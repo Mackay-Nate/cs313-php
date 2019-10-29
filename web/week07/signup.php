@@ -34,7 +34,7 @@
         $valid = false;
       }
 
-      if ($pwd1 == $pwd2) && ($valid)
+      if (($pwd1 == $pwd2) && ($valid))
       {
 
         try
