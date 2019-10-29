@@ -61,7 +61,7 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-      else //if ($pwd1 == $pwd2)
+      else if ($pwd1 != $pwd2)
       {
         $passError = "Your passwords do not match";
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
