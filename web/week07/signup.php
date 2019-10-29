@@ -18,14 +18,17 @@
     {
       $pwd1 = $_POST['pwd1'];
       $pwd2 = $_POST['pwd2'];
-      
-      echo $pwd1;
-      echo $pwd2;
 
       if ($pwd1 != $pwd2) 
       { 
         $passError = "Your passwords do not match";
         $star = "*";
+      }
+
+      if (!preg_match("/^[A-z]*$/",$pwd1)) { 
+      {
+        $passError = "Your password needs 7 letters";
+        echo "7 letters error";
       }
 
       if ($pwd1 == $pwd2)
