@@ -26,7 +26,22 @@
     die();
   }
 
-  $typeIds = $_POST['id'];
+  $stmtMeals = $db->prepare('SELECT type FROM MealType t'
+  . ' INNER JOIN MenuItem mi ON mi.meal_type = t.id'
+  . ' WHERE mi.meal_id = :meal_id');
+  $stmtMeals->bindValue(':meal_id', $row['id']);
+  $stmtMeals->execute();
+
+  while ($topicRow = $stmtMeals->fetch(PDO::FETCH_ASSOC))
+  {
+    echo $topicRow['type'] . '<br>';
+    $statement = $db->prepare('DELETE FROM MenuItem WHERE meal_id=:id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    
+  }
+
+  // $typeIds = $_POST['id'];
   
   // foreach ($typeIds as $typeId) {
   //   $statement = $db->prepare('DELETE FROM MenuItem WHERE meal_id=:id');
@@ -38,5 +53,5 @@
   $statement->bindValue(':id', $id, PDO::PARAM_INT);
   $statement->execute();  
 
-  header("Location: search.php");
+//  header("Location: search.php");
 ?>
