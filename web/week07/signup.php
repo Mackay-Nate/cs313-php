@@ -16,8 +16,15 @@
   <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     {
+      $pwd1 = $_POST['pwd1'];
+      $pwd2 = $_POST['pwd2'];
+      
+      echo $pwd1;
+      echo $pwd2;
+      
       try
       {
+        
         $passwordHash = password_hash($_POST["pwd1"], PASSWORD_DEFAULT);
 
         //connecting to database
