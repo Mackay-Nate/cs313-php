@@ -44,16 +44,16 @@
     
   // }
 
-  // $typeIds = $_POST['id'];
+  $typeIds = $_POST['id'];
   
-  // foreach ($typeIds as $typeId) {
-  //   $statement = $db->prepare('DELETE FROM MenuItem WHERE meal_id=:id');
-  //   $statement->bindValue(':id', $id, PDO::PARAM_INT);
-  //   $statement->execute();
-  // }
+  foreach ($typeIds as $typeId) {
+    $statement = $db->prepare('DELETE FROM MenuItem WHERE meal_id=:id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+  }
 
   $statement = $db->prepare('DELETE FROM Meal WHERE id=:id');
-  $statement->bindValue(':id', $id, PDO::PARAM_STR);
+  $statement->bindValue(':id', $id, PDO::PARAM_INT);
   $statement->execute();  
   echo $id;
 
