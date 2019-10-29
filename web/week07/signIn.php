@@ -26,6 +26,9 @@
     // require 'password.php';
 ​    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     {
+      $pwd1 = $_POST['pwd1'];
+      $pwd2 = $_POST['pwd2'];
+      
       try
       {
 
