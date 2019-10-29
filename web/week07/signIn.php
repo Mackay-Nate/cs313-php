@@ -18,7 +18,7 @@
 <body>
   <nav>
     <ul class="navigation">
-      <li class="active"><a href="https://morning-bastion-33855.herokuapp.com/week7team/signup.php">Sign up page</a></li>
+      <li class="active"><a href="signup.php">Sign up page</a></li>
     </ul>
   </nav>
 ​

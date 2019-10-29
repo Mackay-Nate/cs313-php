@@ -14,7 +14,7 @@
   </nav>
   ​
   <?php
-    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']) && false)
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     {
       try
       {
