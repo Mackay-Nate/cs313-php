@@ -41,7 +41,7 @@
 
 <h2> Type in the name of the meal you'd like to edit </h2>
 <form method="post" action=''>
-	<span>Meal name:</span><input type="text" name="search" id="search" value="Oatmeal">
+	<span>Meal name:</span><input type="text" name="search" id="search" placeholder="Oatmeal">
   <input type="submit" value="Search" >
 </form>
 
@@ -76,7 +76,7 @@
 
       echo '<form method="post" action="confirm_delete.php">
               <input type="hidden" name="id" value="$id">
-              $id
+              . '$id' .
               <input type="hidden" name="meal" value="$name">
     
               <input type="submit" value="Confirm" onclick="successDelete()">
