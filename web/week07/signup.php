@@ -9,7 +9,7 @@
 <body>
   <nav>
     <ul class="navigation">
-      <li class="active"><a href="signin.php">Sign in page</a></li>
+      <li class="active"><a href="signIn.php">Sign in page</a></li>
     </ul>
   </nav>
   ​
@@ -55,7 +55,8 @@
           $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
           $stmt->execute();
 
-          header("Location: signIn.php");
+          header("Location: https://morning-bastion-33855.herokuapp.com/week7team/signIn.php");
+          die();
         }//end try
         catch (PDOException $ex)
         {
@@ -67,7 +68,7 @@
           echo 'Error!: ' . $ex->getMessage();
           die();
         }
-      }
+      }// end if ($pwd1 == $pwd2)
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     // else
     // {
