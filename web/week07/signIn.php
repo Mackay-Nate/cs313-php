@@ -95,8 +95,7 @@
 ​
       </form>
     </div>
-  <?php }//end else ?>
-​
+  
 ​
 </body>
 </html>
