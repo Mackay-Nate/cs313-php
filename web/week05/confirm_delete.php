@@ -29,7 +29,7 @@
   $stmtMeals = $db->prepare('SELECT type FROM MealType t'
   . ' INNER JOIN MenuItem mi ON mi.meal_type = t.id'
   . ' WHERE mi.meal_id = :meal_id');
-  $stmtMeals->bindValue(':meal_id', $row['id']);
+  $stmtMeals->bindValue(':meal_id', $id);
   $stmtMeals->execute();
 
   while ($topicRow = $stmtMeals->fetch(PDO::FETCH_ASSOC))
