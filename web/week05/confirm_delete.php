@@ -1,6 +1,6 @@
 <?php 
   $name = htmlspecialchars($_POST['meal']);
-  $id   = (int)htmlspecialchars($_POST['id']);
+  $id   = htmlspecialchars($_POST['id']);
 
   session_start();
 
