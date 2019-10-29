@@ -39,7 +39,7 @@
         // $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
         // $stmt->execute();
 
-        header("Location: signIn.php");
+        // header("Location: signIn.php");
 ​
       }//end try
       catch (PDOException $ex)
@@ -54,8 +54,8 @@
       }
 ​
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
-    else
-    {
+    // else
+    // {
   ?>
 ​
   <div>
