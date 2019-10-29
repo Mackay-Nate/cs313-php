@@ -22,7 +22,7 @@
     </ul>
   </nav>
 ​
-  <?php
+  <!-- <?php
     require 'password.php';
 ​    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     {
@@ -85,7 +85,7 @@
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     else
     {
-    ?>
+    ?> -->
 ​
     <div>
       <form action="" method="post">
