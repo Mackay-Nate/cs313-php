@@ -33,8 +33,8 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ​
         //inserting new user into database
-        $queryUser = 'INSERT INTO users (username, userpassword) VALUES(:name, :hashpassword)';
-        $stmt = $db->prepare($queryUser);
+        $query = "INSERT INTO users (username, userpassword) VALUES (:name, :hashpassword)";
+        $stmt = $db->prepare($query);
         $stmt->bindValue(':name', $_POST["username"], PDO::PARAM_STR);
         $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
         $stmt->execute();
