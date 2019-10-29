@@ -21,7 +21,10 @@
       
       echo $pwd1;
       echo $pwd2;
-      
+
+      if ($pwd1 == $pwd2)
+      { 
+
       try
       {
         
@@ -58,7 +61,9 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-
+      else //if ($pwd1 == $pwd2)
+      {
+        $passError = "Your passwords do not match";
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     // else
     // {
@@ -69,7 +74,7 @@
       Please enter your username:<input type="text" name="username"><br><br>
       password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><br><br>
       password:<input type="password"  id="pwd2" name="pwd2"><br><br>
-      <input type="submit" value="addUser" name="btnSubmit"  ><br><br>
+      <input type="submit" value="addUser" name="btnSubmit"  ><span color=red;><?php echo $passError; ?></span><br><br>
 
     </form>
   </div>

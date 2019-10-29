@@ -24,68 +24,68 @@
 
   <?php
     // require 'password.php';
-​    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
-    {
+// ​    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
+//     {
       
-      try
-      {
+//       try
+//       {
 
-        //connecting to database
-        $dbUrl = getenv('DATABASE_URL');
-        $dbOpts = parse_url($dbUrl);
-        $dbHost = $dbOpts["host"];
-        $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["user"];
-        $dbPassword = $dbOpts["pass"];
-        $dbName = ltrim($dbOpts["path"],'/');
+//         //connecting to database
+//         $dbUrl = getenv('DATABASE_URL');
+//         $dbOpts = parse_url($dbUrl);
+//         $dbHost = $dbOpts["host"];
+//         $dbPort = $dbOpts["port"];
+//         $dbUser = $dbOpts["user"];
+//         $dbPassword = $dbOpts["pass"];
+//         $dbName = ltrim($dbOpts["path"],'/');
 
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+//         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //getting user info from database for comparision
-        $queryUser = 'SELECT userpassword FROM users WHERE username = :username';
-        $stmt = $db->prepare($queryUser);
-        //binding puts my variables into my place holders
-        $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
-        $stmt->execute();
+//         //getting user info from database for comparision
+//         $queryUser = 'SELECT userpassword FROM users WHERE username = :username';
+//         $stmt = $db->prepare($queryUser);
+//         //binding puts my variables into my place holders
+//         $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
+//         $stmt->execute();
 
-        //array that holds the results from the database
-        $userRowSet = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//         //array that holds the results from the database
+//         $userRowSet = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $hashedPassword = -1;
-        if(!empty($userRowSet))
-        {
-          $hashedPassword = $userRowSet[0]["userpassword"];
+//         $hashedPassword = -1;
+//         if(!empty($userRowSet))
+//         {
+//           $hashedPassword = $userRowSet[0]["userpassword"];
 
-          if(password_verify($_POST["pwd1"], $hashedPassword))
-          {
-            $_SESSION["username"] = $_POST["username"];
-            header("Location: welcome.php");
-          }
-          else
-          {
-            header("Location: signIn.php");
-          }
-        }
-        else
-        {
-        header("Location: signIn.php");
-        }
-​
-​      }//end try
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
-      catch (Exception $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
-    }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
-    else
-    {
+//           if(password_verify($_POST["pwd1"], $hashedPassword))
+//           {
+//             $_SESSION["username"] = $_POST["username"];
+//             header("Location: welcome.php");
+//           }
+//           else
+//           {
+//             header("Location: signIn.php");
+//           }
+//         }
+//         else
+//         {
+//         header("Location: signIn.php");
+//         }
+// ​
+// ​      }//end try
+//       catch (PDOException $ex)
+//       {
+//         echo 'Error!: ' . $ex->getMessage();
+//         die();
+//       }
+//       catch (Exception $ex)
+//       {
+//         echo 'Error!: ' . $ex->getMessage();
+//         die();
+//       }
+//     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
+//     else
+//     {
     ?>
 
     <div>
