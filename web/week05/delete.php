@@ -76,7 +76,7 @@
 
       echo '<form method="post" action="confirm_delete.php">
               <input type="hidden" name="id" value="$id">
-              . '$id' .
+              ' . $id . '
               <input type="hidden" name="meal" value="$name">
     
               <input type="submit" value="Confirm" onclick="successDelete()">
