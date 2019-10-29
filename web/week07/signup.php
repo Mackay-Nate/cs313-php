@@ -12,7 +12,7 @@
       <li class="active"><a href="https://morning-bastion-33855.herokuapp.com/week7team/signin.php">Sign in page</a></li>
     </ul>
   </nav>
-​
+  ​
   <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']) && false)
     {
@@ -31,7 +31,7 @@
 
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-​
+
         //inserting new user into database
         // $query = "INSERT INTO users (username, userpassword) VALUES (:name, :hashpassword)";
         // $stmt = $db->prepare($query);
@@ -40,7 +40,6 @@
         // $stmt->execute();
 
         // header("Location: signIn.php");
-​
       }//end try
       catch (PDOException $ex)
       {
@@ -52,22 +51,22 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-​
+
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     // else
     // {
   ?>
-​
+  ​
   <div>
     <form action="" method="post">
       Please enter your username:<input type="text" name="username"><br><br>
       password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><br><br>
       password:<input type="password"  id="pwd2" name="pwd2"><br><br>
       <input type="submit" value="addUser" name="btnSubmit"  ><br><br>
-​
+
     </form>
   </div>
     <?php }//end else ?>
-​
+    ​
 	</body>
 </html>
