@@ -25,7 +25,7 @@
         $star = "*";
       }
 
-      if (!preg_match("/^[A-z]*$/",$pwd1)) { 
+      if (!preg_match("/^[A-z]*$/",$pwd1)) 
       {
         $passError = "Your password needs 7 letters";
         echo "7 letters error";
