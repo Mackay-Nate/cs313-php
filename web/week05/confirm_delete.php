@@ -2,7 +2,8 @@
   $name = htmlspecialchars($_GET['meal']);
   $id   = htmlspecialchars($_GET['id']);
 
-  echo $name $id;
+  echo $name;
+  echo $id;
 
   session_start();
 
