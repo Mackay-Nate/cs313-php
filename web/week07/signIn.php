@@ -59,16 +59,16 @@
 //           if(password_verify($_POST["pwd1"], $hashedPassword))
 //           {
 //             $_SESSION["username"] = $_POST["username"];
-//             header("Location: https://morning-bastion-33855.herokuapp.com/week7team/welcome.php");
+//             header("Location: welcome.php");
 //           }
 //           else
 //           {
-//             header("Location: https://morning-bastion-33855.herokuapp.com/week7team/signIn.php");
+//             header("Location: signIn.php");
 //           }
 //         }
 //         else
 //         {
-//         header("Location: https://morning-bastion-33855.herokuapp.com/week7team/signIn.php");
+//         header("Location: signIn.php");
 //         }
 // ​
 // ​      }//end try

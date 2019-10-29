@@ -33,13 +33,13 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ​
         //inserting new user into database
-        $query = "INSERT INTO users (username, userpassword) VALUES (:name, :hashpassword)";
-        $stmt = $db->prepare($query);
-        $stmt->bindValue(':name', $_POST["username"], PDO::PARAM_STR);
-        $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
-        $stmt->execute();
+        // $query = "INSERT INTO users (username, userpassword) VALUES (:name, :hashpassword)";
+        // $stmt = $db->prepare($query);
+        // $stmt->bindValue(':name', $_POST["username"], PDO::PARAM_STR);
+        // $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
+        // $stmt->execute();
 
-        header("Location: https://morning-bastion-33855.herokuapp.com/week7team/signIn.php");
+        header("Location: signIn.php");
 ​
       }//end try
       catch (PDOException $ex)
