@@ -74,7 +74,7 @@
 
       echo '<h3>Are you sure you want to delete this meal?<h3>';
 
-      echo '<form method="post" action="confirm_delete.php">
+      echo '<form method="get" action="confirm_delete.php">
               <input type="hidden" name="id" value="$id">
               ' . $id . '
               <input type="hidden" name="meal" value="$name">

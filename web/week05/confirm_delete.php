@@ -1,6 +1,8 @@
 <?php 
-  $name = htmlspecialchars($_POST['meal']);
-  $id   = htmlspecialchars($_POST['id']);
+  $name = htmlspecialchars($_GET['meal']);
+  $id   = htmlspecialchars($_GET['id']);
+
+  scho $name $id;
 
   session_start();
 
@@ -50,7 +52,7 @@
   // }
 
   $statement = $db->prepare('DELETE FROM Meal WHERE id=:id');
-  $statement->bindValue(':id', $id, PDO::PARAM_INT);
+  $statement->bindValue(':id', $id, PDO::PARAM_STR);
   $statement->execute();  
   echo $id;
 
