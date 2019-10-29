@@ -51,10 +51,24 @@
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <script src="calendar.js"></script>
+    <link rel="stylesheet" type="text/css" href="calendar.css">   
+  </head>
+
+<body>
 <body onload="successDelete()">
 
 
 <?php
 
   header("Location: search.php");
+  die();
 ?>
+</body>
+</html>
