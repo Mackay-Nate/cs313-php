@@ -25,6 +25,7 @@
       if ($pwd1 != $pwd2) 
       { 
         $passError = "Your passwords do not match";
+        $star = "*";
       }
 
       if ($pwd1 == $pwd2)
@@ -75,9 +76,9 @@
   <div>
     <form action="" method="post">
       Please enter your username:<input type="text" name="username"><br><br>
-      password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><br><br>
-      password:<input type="password"  id="pwd2" name="pwd2"><br><br>
-      <input type="submit" value="addUser" name="btnSubmit"  ><span color=red;><?php echo $passError; ?></span><br><br>
+      password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><span style="color:red;"><?php echo $star; ?></span><br><br>
+      password:<input type="password"  id="pwd2" name="pwd2"><span style="color:red;"><?php echo $star; ?></span><br><br>
+      <input type="submit" value="addUser" name="btnSubmit"  ><span style="color:red;"><?php echo $passError; ?></span><br><br>
 
     </form>
   </div>
