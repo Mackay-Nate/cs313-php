@@ -9,7 +9,7 @@
 <body>
   <nav>
     <ul class="navigation">
-      <li class="active"><a href="https://morning-bastion-33855.herokuapp.com/week7team/signin.php">Sign in page</a></li>
+      <li class="active"><a href="signin.php">Sign in page</a></li>
     </ul>
   </nav>
   ​
@@ -39,7 +39,7 @@
         $stmt->bindValue(':hashpassword', $passwordHash, PDO::PARAM_STR);
         $stmt->execute();
 
-        // header("Location: signIn.php");
+        header("Location: signIn.php");
       }//end try
       catch (PDOException $ex)
       {
