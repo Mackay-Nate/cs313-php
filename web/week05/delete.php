@@ -79,7 +79,7 @@
               ' . $id . '
               <input type="hidden" name="meal" value=' . $name . '>
     
-              <input type="submit" value="Confirm" onclick="successDelete()">
+              <input type="submit" value="Confirm">
             </form>';
       echo '<form method="post" action="search.php">
               <input type="submit" value="Cancel" >
