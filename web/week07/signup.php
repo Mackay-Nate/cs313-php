@@ -27,7 +27,7 @@
         $valid = false;
       }
 
-      if (!preg_match("/^[A-z]{7,}$/",$pwd1)) 
+      if (!preg_match("/[A-z]{7,}/",$pwd1)) 
       {
         $passError = "Your password needs 7 letters";
         $valid = false;
