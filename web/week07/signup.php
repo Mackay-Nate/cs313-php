@@ -33,13 +33,13 @@
         $valid = false;
       }
 
-      if (!preg_match("/^[\d]*$/",$pwd1)) 
+      if (!preg_match("/^[\d]|[\d]|[\d]|[\d]|[\d]|[\d]|[\d]|[\d]*$/",$pwd1)) 
       {
         $passError = "Your password needs one number";
         $valid = false;
       }
 
-      if (($pwd1 == $pwd2) && ($valid))
+      if ($valid)
       {
 
         try
