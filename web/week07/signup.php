@@ -27,13 +27,13 @@
         $valid = false;
       }
 
-      if (!preg_match("/^[A-z0-9][A-z0-9][A-z0-9][A-z0-9][A-z0-9][A-z0-9][A-z0-9][A-z0-9]*$/",$pwd1)) 
+      if (!preg_match("/^[A-z0-9]{7,}$/",$pwd1)) 
       {
         $passError = "Your password needs 7 letters";
         $valid = false;
       }
 
-      if (!preg_match("/^[\d]|[\d]|[\d]|[\d]|[\d]|[\d]|[\d]|[\d]*$/",$pwd1)) 
+      if (!preg_match("/^[0-9]+$/",$pwd1)) 
       {
         $passError = "Your password needs one number";
         $valid = false;
