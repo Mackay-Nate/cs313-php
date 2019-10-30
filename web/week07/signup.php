@@ -20,6 +20,7 @@
       $pwd2 = $_POST['pwd2'];
       $valid = true;
 
+      //check if passwords match
       if ($pwd1 != $pwd2) 
       { 
         $passError = "Your passwords do not match";
@@ -27,12 +28,14 @@
         $valid = false;
       }
 
+      //check for at least 7 letters
       if (!preg_match("/[A-z]{7,}/",$pwd1)) 
       {
         $passError = "Your password needs 7 letters";
         $valid = false;
       }
 
+      //check for at least one number
       if (!preg_match("/[0-9]+/",$pwd1)) 
       {
         $passError = "Your password needs one number";
@@ -86,14 +89,93 @@
   ?>
   ​
   <div>
-    <form action="" method="post">
+    <form action="" method="post" onsubmit="return isIdentical()">
       Please enter your username:<input type="text" name="username"><br><br>
       password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><span style="color:red;"><?php echo $star; ?></span><br><br>
-      password:<input type="password"  id="pwd2" name="pwd2"><span style="color:red;"><?php echo $star; ?></span><br><br>
-      <input type="submit" value="addUser" name="btnSubmit"  ><span style="color:red;"><?php echo $passError; ?></span><br><br>
+      password:<input type="password"  id="pwd2" name="pwd2" onchange="checkPassword()"><span style="color:red;"><?php echo $star; ?></span><br><br>
+      <input type="submit" value="addUser" name="btnSubmit"  ><span style="color:red;"><?php echo $passError; ?></span><br>
+      <span id="error" style="color:red"></span>
+	  	<span id="error2" style="color:red"></span><br>
 
     </form>
   </div>
     ​
+
+<script>
+  function isIdentical() {
+	var item1 = document.getElementById("p1").value
+	var item2 = document.getElementById("p2").value
+	var numCount = 0;
+	var charCount = 0;
+​
+	// if (item1.length != item2.length) {
+	// 	alert("Passwords Not Identical");
+	// 	return false;
+	// }
+​
+	if (item1.length < 7) {
+		alert("Password is too short");
+		return false;
+	}
+​
+	for (var i = 0; i < item1.length; i++) {
+		if (item1.charAt(i) != item2.charAt(i)) {
+			alert("Passwords Not Identical");
+			return false;
+		}
+​
+		if (isNaN(item1.charAt(i))) { 
+			charCount++; 
+		} else { 
+			numCount++; 
+		}
+	}
+​
+	if (numCount == 0) {
+		alert("Password needs at least one number");
+		return false;
+	}
+}
+​
+function checkPassword() {
+	var item1 = document.getElementById("pwd1").value;
+	var item2 = document.getElementById("pwd2").value;
+	var isSame = true;
+	var numCount = 0;
+	var charCount = 0;
+​
+	if (item1.length != item2.length && item1.length < 7) {
+		isSame = false;
+	}
+​
+	for (var i = 0; i < item1.length; i++) {
+		if (item1.charAt(i) != item2.charAt(i)) {
+			isSame = false;
+		}
+​
+		if (isNaN(item1.charAt(i))) { 
+			charCount++; 
+		} else { 
+			numCount++; 
+		}
+	}
+​
+	if (!isSame) {
+		document.getElementById('error').innerHTML = "*Passwords not identical.<br/>";
+	}	
+	else {
+		document.getElementById('error').innerHTML = "";
+	}
+​
+	if (numCount == 0 || item1.length < 7) {
+		document.getElementById('error2').innerHTML = "*Password needs to be at least 7 characters long and contain a number.<br/>";
+	}
+	else {
+		document.getElementById('error2').innerHTML = "";
+	}
+​​
+}
+</script>
+    
 	</body>
 </html>
