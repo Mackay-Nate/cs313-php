@@ -33,7 +33,7 @@
         $valid = false;
       }
 
-      if (!preg_match("/^[0-9]+$/",$pwd1)) 
+      if (!preg_match("/[0-9]+/",$pwd1)) 
       {
         $passError = "Your password needs one number";
         $valid = false;
