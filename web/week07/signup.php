@@ -87,9 +87,9 @@
     // else
     // {
   ?>
-  ​
+
   <div>
-    <form action="" method="post" onsubmit="return isIdentical()">
+    <form action="" method="post">
       Please enter your username:<input type="text" name="username" id="username"><br><br>
       password (7 letters and a number):<input type="password" id ="pwd1" name="pwd1"><span id="error" style="color:red;"><?php echo $star; ?></span><br><br>
       password:<input type="password"  id="pwd2" name="pwd2" onchange="checkPassword()"><span id="error2" style="color:red;"><?php echo $star; ?></span><br><br>
