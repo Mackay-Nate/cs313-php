@@ -45,6 +45,7 @@
 
 <form action="week.php">
 <input type="submit" value="Populate calendar for this week">
+<!-- <input type="submit" value="Next week's meals"> -->
 
 <table id="table1">
   <tr>
@@ -78,14 +79,14 @@
         }
     ?>
   </tr>
-  <tr>
+  <!-- <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-  </tr>
+  </tr> -->
   <tr>
     <td>chef</td>
     <td>Ava</td>
@@ -120,14 +121,14 @@
       }
     ?>
   </tr>
-  <tr>
+  <!-- <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-  </tr>
+  </tr> -->
   <tr>
     <td class="tborder" rowspan="3">Dinner</td>
     <td class="tborder"></td>
@@ -150,14 +151,14 @@
 
     ?> 
   </tr>
-  <tr>
+  <!-- <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-  </tr>
+  </tr> -->
   <tr>
     <td>chef</td>
     <td>Janice</td>
@@ -171,6 +172,9 @@
 </table>
 </form>
 
+<form action="week.php?week=<?php echo ($week + 1); ?>">
+  <input type="submit" value="Next week's meals">
+</form>
 
 
   <script src="calendar.js"></script>

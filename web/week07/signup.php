@@ -18,31 +18,31 @@
     {
       $pwd1 = $_POST['pwd1'];
       $pwd2 = $_POST['pwd2'];
-      $valid = true;
+      $validPassword = true;
 
       //check if passwords match, stretch 1
       if ($pwd1 != $pwd2) 
       { 
         $passError = "Your passwords do not match";
         $star = "*";
-        $valid = false;
+        $validPassword = false;
       }
 
       //check for at least 7 characters, stretch 2
       if (!preg_match("/\w{7,}/",$pwd1)) 
       {
         $passError = "Your password needs 7 characters";
-        $valid = false;
+        $validPassword = false;
       }
 
       //check for at least one number
       if (!preg_match("/[0-9]+/",$pwd1)) 
       {
         $passError = "Your password needs one number";
-        $valid = false;
+        $validPassword = false;
       }
 
-      if ($valid)
+      if ($validPassword)
       {
 
         try
@@ -82,7 +82,7 @@
           echo 'Error!: ' . $ex->getMessage();
           die();
         }
-      }// end if ($valid)
+      }// end if ($validPassword)
     }//end if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnSubmit']))
     // else
     // {

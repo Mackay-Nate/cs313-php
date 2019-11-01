@@ -10,3 +10,4 @@ function success() {
 function successDelete() { 
   alert("Your meal was deleted.")
 }
+
