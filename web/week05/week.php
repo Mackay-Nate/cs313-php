@@ -43,7 +43,7 @@
 
 <h1>Weekly Dinner menu</h1> 
 
-<form action="week.php">
+<form action="week.php" method="get">
 <input type="submit" value="Populate calendar for this week">
 <!-- <input type="submit" value="Next week's meals"> -->
 
@@ -58,7 +58,7 @@
     <th>Friday</th>
   </tr>
   <tr>
-    <td class="tborder" rowspan="3">Breakfast</td>
+    <td class="tborder" rowspan="2">Breakfast</td>
     <td class="tborder"></td>
     <?php 
 
@@ -96,7 +96,7 @@
     <td>Jen</td>
   </tr>
   <tr>
-    <td class="tborder" rowspan="2">Lunch</td>
+    <td class="tborder" rowspan="1">Lunch</td>
     <td class="tborder"></td>
     <?php
       $query ="SELECT MenuItem.id, Meal.name, MealType.type
@@ -130,7 +130,7 @@
     <td></td>
   </tr> -->
   <tr>
-    <td class="tborder" rowspan="3">Dinner</td>
+    <td class="tborder" rowspan="2">Dinner</td>
     <td class="tborder"></td>
     <?php 
       foreach ($db->query("SELECT MenuItem.id, Meal.name, MealType.type, Meal.id
@@ -172,7 +172,7 @@
 </table>
 </form>
 
-<form action="week.php?week=<?php echo ($week + 1); ?>">
+<form method="get" action="week.php?week=<?php echo ($week + 1); ?>">
   <input type="submit" value="Next week's meals">
 </form>
 
