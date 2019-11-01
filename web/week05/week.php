@@ -173,10 +173,9 @@
 </form>
 
 <form method="get" action="week.php?week=<?php echo ($week + 1); ?>">
-  <input type="hidden" id="week" value="<?phpecho $week + 1;?>">
+  <input type="hidden" id="week" value="<?php (echo date('W') + 1); ?>">
   <input type="submit" value="Next week's meals">
 </form>
-
 
   <script src="calendar.js"></script>
 
