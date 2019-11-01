@@ -23,7 +23,7 @@
     die();
   }
 
-  $week = $_GET['week'];
+  $week = htmlspecialchars($_GET['week']);
   if ($week == "") { 
     $week = date('W'); 
   }
@@ -173,6 +173,7 @@
 </form>
 
 <form method="get" action="week.php?week=<?php echo ($week + 1); ?>">
+  <input type="hidden" id="week" value="<?phpecho $week + 1;?>">
   <input type="submit" value="Next week's meals">
 </form>
 
