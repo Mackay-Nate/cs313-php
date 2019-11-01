@@ -172,7 +172,7 @@
 </table>
 </form>
 
-<form method="get" action=<?php echo "week.php?week= ($week + 1); ?>">
+<form method="get" action="week.php">
   <input type="hidden" id="week" value="<?php echo (date('W') + 1); ?>">
   <input type="submit" value="Next week's meals">
 </form>
