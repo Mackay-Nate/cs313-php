@@ -173,7 +173,7 @@
 </form>
 
 <form method="get" action="week.php">
-  <input type="hidden" name="week" value="<?php echo (date('W') + 1); ?>">
+  <input type="hidden" name="week" value="<?php echo ($week + 1); ?>">
   <input type="submit" value="Next week's meals">
 </form>
 
